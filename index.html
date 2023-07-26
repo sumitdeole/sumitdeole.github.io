@@ -115,6 +115,7 @@
                         <div class="institution">TSE (France)</div>
                         <div class="years">2012 - 2013</div>
                     </div> 
+			
 		    <div class="cellContainer" style="margin: 20px">
                         <img class="img-fluid instilogo p-1" src="images/Capgemini.png">
                         <div class="institution">Capgemini (India)</div>
@@ -155,6 +156,10 @@
         .years {
             font-size: 14px;
             font-style: italic;
+        }
+	 /* Adjust the width of the last cellContainer for the last image */
+        .cellContainer:last-child {
+            flex: 0 0 80%; /* Set a higher percentage value to make the last image larger */
         }
     </style>
            

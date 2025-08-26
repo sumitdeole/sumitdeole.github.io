@@ -1,222 +1,782 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3MRRYE2110"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'G-3TDNDGG3N5');
-    </script>
-
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Data Scientist and Economist at Trier University, Germany">
-    <meta name="author" content="Sumit Deole">
-    <meta name="theme-color" content="#222222">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/style-3.css">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumit S. Deole - Financial AI Expert & Web Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-    body {
-        font-family: 'Helvetica', Arial, sans-serif;
-        font-size: 19px; /* Slightly larger font */
-        line-height: 1.6;
-        margin: 0;
-        padding: 0;
-    }
-    
-    a {
-        text-decoration: none;
-        color: #007BFF;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .in-text {
-        color: #007BFF;
-        text-decoration: none;
-    }
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #f59e0b;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f8fafc;
+            --bg-card: #ffffff;
+            --border-color: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
 
-    .in-text:hover {
-        text-decoration: underline;
-    }
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-light);
+        }
 
-    .emphasized {
-        font-weight: bold;
-    }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    .name {
-        font-size: 24px;
-        font-weight: bold;
-    }
+        /* Header */
+        .header {
+            background: var(--bg-card);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
 
-    .profilepic {
-        max-width: 100%;
-        max-height: 100%;
-    }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
 
-    .menulinks {
-        font-size: 19px; /* Slightly larger font */
-    }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
 
-    .about {
-        overflow: scroll;
-        max-height: 80vh;
-        padding-right: 15px; /* Add space for scrollbar */
-    }
-    
-    .header {
-        font-size: 24px;
-        font-weight: bold;
-    }
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
 
-    .institution {
-        font-size: 19px; /* Slightly larger font */
-        font-weight: bold;
-    }
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
 
-    .years {
-        font-size: 17px; /* Slightly larger font */
-        font-style: italic;
-    }
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
 
-    .paper {
-        font-size: 17px; /* Slightly larger font */
-    }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 8rem 0 4rem;
+            margin-top: 70px;
+        }
 
-    .papertitle {
-        font-weight: bold;
-    }
+        .hero-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
 
-    .conf {
-        font-style: italic;
-    }
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
 
-    .confshort {
-        color: #007BFF;
-        text-decoration: none;
-    }
+        .hero-text .tagline {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
 
-    .tag {
-        color: #007BFF;
-        text-decoration: none;
-    }
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
 
-    .tag:hover {
-        text-decoration: underline;
-    }
+        .hero-image {
+            text-align: center;
+        }
 
-    .tagsep {
-        margin-left: 5px;
-        margin-right: 5px;
-    }
-</style>
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            object-fit: cover;
+            box-shadow: var(--shadow-lg);
+        }
 
-    <title>Sumit Deole</title>
+        .contact-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--bg-card);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: var(--bg-light);
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        /* Project Cards */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .project-header {
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .project-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .project-info h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .project-type {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .project-body {
+            padding: 1.5rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .project-link:hover {
+            background: var(--secondary-color);
+        }
+
+        .project-link.secondary {
+            background: var(--bg-light);
+            color: var(--text-dark);
+            border: 1px solid var(--border-color);
+        }
+
+        .project-link.secondary:hover {
+            background: var(--text-light);
+            color: white;
+        }
+
+        /* Blog/Research Section */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .blog-card {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .blog-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .blog-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            margin-top: 0.5rem;
+        }
+
+        .blog-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--accent-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .contact-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-contact {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Color variants for project icons */
+        .bg-blue { background: var(--primary-color); }
+        .bg-green { background: #10b981; }
+        .bg-purple { background: #8b5cf6; }
+        .bg-red { background: #ef4444; }
+        .bg-orange { background: var(--accent-color); }
+        .bg-indigo { background: #6366f1; }
+    </style>
 </head>
 <body>
-    <div class="container pt-5">
-        <div class="row pt-5">
-            <div class="col-md-4 pt-5">
-                <div class="fixed-posi">
-                    <p class="name">Sumit S. Deole</p>
-                    <img src="images/photograph.png" class="profilepic pt-3 pb-2">
-                    <div class="menulinks">
-                        <a href="https://scholar.google.de/citations?user=BpmeH88AAAAJ&hl=en" target="_blank">Google Scholar</a> <br />
-                        <a href="https://github.com/sumitdeole" target="_blank">GitHub</a>
-                        <i class="fa fa-github" style="font-size:20px"></i> <br />
-                        <a href="https://www.linkedin.com/in/sumitdeole" target="_blank">LinkedIn</a>
-                        <i class="fa fa-linkedin" style="font-size:20px"></i> <br />
-                        <a href="mailto:sumitdeole(at)gmail(dot)com">Email</a>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="logo">Sumit S. Deole</a>
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">AI Projects</a></li>
+                <li><a href="#webdev" class="nav-link">Web Development</a></li>
+                <li><a href="#research" class="nav-link">Research</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <div class="hero-text">
+                    <h1>Financial AI Expert & Web Developer</h1>
+                    <p class="tagline">Transforming Finance with Advanced Analytics & AI</p>
+                    <p>I have >4 years of experience as a financial economist (Focus: Credit Risk Modelling and Entrepreneurship). Recently, I have transitioned to employing advanced analytics for business use cases. Now, I aim to shift my focus to the private sector (fraud detection and AML), utilize my expertise in advisory roles, and create business value.</p>
+                    
+                    <div class="contact-links">
+                        <a href="mailto:sumit@example.com" class="contact-link">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
+                        <a href="https://linkedin.com/in/sumitdeole" class="contact-link">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/sumitdeole" class="contact-link">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://medium.com/@sumitdeole" class="contact-link">
+                            <i class="fab fa-medium"></i> Medium
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <!-- Replace with your actual photo -->
+                    <img src="images/photograph.png" alt="Sumit S. Deole" class="profile-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">A unique blend of academic rigor and practical innovation in financial technology</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I currently work as a research and teaching fellow at the Department of Business Administration in Trier University. Previously, I worked as a Product Owner at Cognigy GmbH, a leader in Conversational AI.</p>
+                    
+                    <p>With over ten years of expertise in causal inference methods and recent intensive skill-building in machine learning and deep learning, I bring a unique perspective to financial technology and risk management.</p>
+                    
+                    <p>I hold degrees from prestigious institutions including VJTI Mumbai, Toulouse School of Economics, AMSE Marseille, and University of Halle-Wittenberg, with research published in reputed economics journals.</p>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Credit Risk Modeling</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Fraud Detection & AML</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-robot"></i>
+                        <span>Machine Learning & AI</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-code"></i>
+                        <span>Web Development</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-brain"></i>
+                        <span>Large Language Models</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Causal Inference</span>
                     </div>
                 </div>
             </div>
-            <div class="col-md-8 pt-5 about">
-                <p class="header">About me</p>
-                <p>I currently work as a <a class="in-text" href="https://www.uni-trier.de/universitaet/fachbereiche-faecher/fachbereich-iv/faecher/betriebswirtschaftslehre/professoren/fin/das-fach/team/wissenschaftliche-mitarbeiter-und-weitere-doktoranden/sumit-deole/"
-                        target="_blank">research and teaching fellow</a> at the Department of Business Administration in Trier University (with <a class="in-text" href="https://www.uni-trier.de/universitaet/fachbereiche-faecher/fachbereich-iv/faecher/betriebswirtschaftslehre/professoren/fin/das-fach/team/prof-dr-marc-oliver-rieger/"
-                        target="_blank">Prof. Dr. Marc Oliver Rieger</a>). Previously, I have worked as a research assistant at the <a class="in-text" href="https://www.unibw.de/home" target="_blank">University of the Bundeswehr Munich</a> and <a class="in-text" href="https://wiwi.tu-dortmund.de/"
-                        target="_blank">TU Dortmund</a>.</p>
-                <p>I have accumulated more than ten years of expertise in the utilization of causal inference methods for both research and teaching roles within academic settings. However, about a year ago, I shifted my focus to the private sector and worked as a <span class="emphasized">Product Owner</span> at <a class="in-text" href="cognigy.com/"
-                        target="_blank">Cognigy GmbH</a>, a leader in the emerging Conversational AI industry as per the latest <a class="in-text" href="https://www.cognigy.com/gartner-magic-quadrant-conversational-ai-2023/" target="_blank">Gartner Magic Quadrant</a> for Enterprise Conversational AI Platforms. I was fortunate to work with a fantastic set of industry experts and ML researchers there. Currently, I am undertaking intensive skill-building exercises in the field of machine learning and deep learning.</p>
-                <p>I received a bachelor's degree in Electrical Engineering from <a class="in-text" href="https://vjti.ac.in/" target="_blank">VJTI</a>, Mumbai (India), master's degrees in Economics from two reputed economics schools in France, e.g., <a class="in-text" href="https://www.tse-fr.eu/" target="_blank">Toulouse</a> and <a class="in-text" href="https://www.amse-aixmarseille.fr/en/"
-                        target="_blank">Marseille</a>. I moved to Germany for my doctoral education in Economics at the <a class="in-text" href="https://www.uni-halle.de/" target="_blank">University of Halle-Wittenberg </a>(Supervisor: <a class="in-text" href="https://wachstum.wiwi.uni-halle.de/personal/207968_2674523/" target="_blank">Prof. Dr. Wolf-Heimo Grieben</a>. During my doctoral studies, I was introduced to the state-of-the-art data science methods of causal inference. The research subsequently conducted is now published in reputed economics journals and is widely cited (<i>see</i> <a class="in-text" href="https://scholar.google.de/citations?user=BpmeH88AAAAJ&hl=en/"
-                        target="_blank">Google Scholar</a>).</p>
-                <p class="header">Selected Publications</p>
-                <div class="py-2">
-                    <p class="paper my-2 pl-2">
-                        <span class="papertitle">Home sweet home: Working from home and employee performance during the COVID-19 pandemic in the UK</span class="thisauthor"><br> Sumit S. Deole, Yue Huang, and Max Deter<br>
-                        <span class="conf"><a class="confshort" href="https://www.sciencedirect.com/science/article/pii/S0927537122001853">Labour Economics</a> 80 (2023), 102295</span><br>
-                        <a class="tag" href="https://www.sciencedirect.com/science/article/pii/S0927537122001853" target="_blank">Get it</a><span class="tagsep">|</span>
-                        <a class="tag" href="https://www.sciencedirect.com/science/article/pii/S0927537122001853" target="_blank">Abstract</a><span class="tagsep">|</span>
-                        <a class="tag" href="cites/deole2023home.bib" target="_blank">Cite</a><span class="tagsep">|</span>
-                        <a class="tag" href="https://www.bundesbank.de/resource/blob/878906/0b926f62330196001bbc10d992e8581b/mL/2021-10-wirtschaft-corona-data.pdf" target="_blank">Deutsche Bundesbank</a><span class="tagsep">|</span>
-                        <a class="tag" href="https://unece.org/sites/default/files/2022-11/2214280_E_final_web.pdf" target="_blank">United Nations</a><span class="tagsep">|</span>
-                        <a class="tag" href="https://tera-allas.medium.com/working-from-home-increases-productivity-but-is-much-more-nuanced-than-you-might-think-9f8608ae487d" target="_blank">Medium.com</a>
-                    </p>
+        </div>
+    </section>
+
+    <!-- AI Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Fraud Detection & AML Projects</h2>
+                <p class="section-subtitle">Cutting-edge AI solutions for financial risk management</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <div class="project-header">
+                        <div class="project-icon bg-red">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="project-info">
+                            <h3>Credit Risk Rating</h3>
+                            <span class="project-type">Fraud Risk Scoring</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p>Advanced credit risk assessment system using machine learning algorithms to evaluate and score fraud risk in financial transactions.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/sumitdeole/Fraud_risk_scoring" class="project-link">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="py-2">
-                    <p class="paper my-2 pl-2">
-                        <span class="papertitle">Justice delayed is assimilation denied: Right-wing terror and immigrants' assimilation in Germany.</span class="thisauthor"><br> Sumit S. Deole<br>
-                        <span class="conf"><a class="confshort" href="https://www.sciencedirect.com/science/article/abs/pii/S0927537119300302/">Labour Economics</a> 59 (2019): 69-78</span><br>
-                        <a class="tag" href="https://www.sciencedirect.com/science/article/abs/pii/S0927537119300302" target="_blank">Get it</a><span class="tagsep">|</span>
-                        <a class="tag" href="https://www.sciencedirect.com/science/article/abs/pii/S0927537119300302" target="_blank">Abstract</a><span class="tagsep">|</span>
-                        <a class="tag" href="cites/deole2019justice.bib" target="_blank">Cite</a><span class="tagsep">|</span>
-                        <a class="tag" href="https://www.spiegel.de/wissenschaft/datenlese/nsu-morde-das-vertrauen-der-migranten-in-deutschland-ist-weg-a-1218223.html" target="_blank">Der Spiegel</a>
-                    </p>
+
+                <div class="project-card fade-in">
+                    <div class="project-header">
+                        <div class="project-icon bg-blue">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="project-info">
+                            <h3>AI-Powered AML Detection</h3>
+                            <span class="project-type">Anomaly Detection</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p>Sophisticated fraud detection and anti-money laundering system using AI to identify suspicious patterns and anomalies in financial data.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/sumitdeole/AML_anomaly_detection" class="project-link">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-header">
+                        <div class="project-icon bg-purple">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="project-info">
+                            <h3>GenAI for Numerical Analysis</h3>
+                            <span class="project-type">LLM + Fraud Detection</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p>Innovative application of Large Language Models for numerical data analysis in fraud detection with automated reporting capabilities.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/sumitdeole/LLM_numerical_data" class="project-link">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-header">
+                        <div class="project-icon bg-green">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="project-info">
+                            <h3>LLM Text Analysis</h3>
+                            <span class="project-type">Text Data Processing</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p>Advanced text analysis using Large Language Models for processing unstructured financial data and generating automated compliance reports.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/sumitdeole/LLM_text_data" class="project-link">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="row text-center py-3" style="width:200%; height: 300px">
-            <div class="cellContainer" style="margin: 20px">
-                <img class="img-fluid instilogo p-1" src="images/TrierU.png">
-                <div class="institution">Trier University</div>
-                <div class="years">2023 - Present</div>
+    <!-- Web Development Section -->
+    <section id="webdev" class="section about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Web Development Portfolio</h2>
+                <p class="section-subtitle">Professional web designs showcasing modern UI/UX principles</p>
             </div>
-            <div class="cellContainer" style="margin: 20px">
-                <img class="img-fluid instilogo p-1" src="images/cognigy.png">
-                <div class="institution">Cognigy GmbH</div>
-                <div class="years">2022 - 2022</div>
-            </div>
-            <div class="cellContainer" style="margin: 20px">
-                <img class="img-fluid instilogo p-1" src="images/unibw.png">
-                <div class="institution">UniBw Munich</div>
-                <div class="years">2021 - 2022</div>
-            </div>
-            <div class="cellContainer" style="margin: 20px">
-                <img class="img-fluid instilogo p-1" src="images/tudo.png">
-                <div class="institution">TU Dortmund</div>
-                <div class="years">2019 - 2021</div>
-            </div>
-            <div class "cellContainer" style="margin: 20px">
-                <img class="img-fluid instilogo p-1" src="images/mlu.png">
-                <div class="institution">MLU Halle</div>
-                <div class="years">2013 - 2019</div>
-            </div>
-            <div class="cellContainer" style="margin: 20px">
-                <img class="img-fluid instilogo p-1" src="images/tse.png">
-                <div class="institution">TSE (France)</div>
-                <div class="years">2012 - 2013</div>
-            </div>
-            <div class="cellContainer" style="margin: 20px">
-                <img class="img-fluid instilogo p-1" src="images/Capgemini.png">
-                <div class="institution">Capgemini (India)</div>
-                <div class="years">2008 - 2010</div>
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <div class="project-header">
+                        <div class="project-icon bg-indigo">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <div class="project-info">
+                            <h3>English Vision - Blog Platform</h3>
+                            <span class="project-type">Educational Website</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p>Modern blog platform design for English learning resources with responsive layout and engaging user interface.</p>
+                        <div class="project-links">
+                            <a href="https://sumitdeole.github.io/englishvision-preview-2" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-header">
+                        <div class="project-icon bg-orange">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="project-info">
+                            <h3>English Vision - Landing Page</h3>
+                            <span class="project-type">Marketing Website</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p>Professional landing page design for English learning services with modern aesthetics and conversion-focused layout.</p>
+                        <div class="project-links">
+                            <a href="https://sumitdeole.github.io/englishvision-preview" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-header">
+                        <div class="project-icon bg-red">
+                            <i class="fas fa-presentation"></i>
+                        </div>
+                        <div class="project-info">
+                            <h3>PPT Template Design</h3>
+                            <span class="project-type">Presentation Template</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p>Professional PowerPoint template design with modern styling and clean layouts for business presentations.</p>
+                        <div class="project-links">
+                            <a href="https://sumitdeole.github.io/ppt-template/" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Optional JavaScript -->
-</body>
-</html>
+    <!-- Blog/Medium Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Latest Blogs & Articles</h2>
+                <p class="section-subtitle">Insights on AI, fraud detection, and financial technology</p>
+            </div>
+            <div class="blog-grid">
+                <div class="blog-card fade-in">
+                    <h3>We All Know AI Can Be Biased. Nobody Shows You How to Fix It.</h3>
+                    <a href="https://medium.com/@sumitdeole/we-all-know-ai-can-be-biased-nobody-shows-you-how-to-fix-it-c5c23f72f95c" class="blog-link">
+                        Read Article <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="blog-card fade-in">
+                    <h3>The Dual Promise of LLMs: Mistral for Fraud Detection & Risk Reporting</h3>
+                    <a href="https://medium.com/@sumitdeole/the-dual-promise-of-llms-fraud-detection-and-economic-analysis-in-financial-services-a0ced58e690c" class="blog-link">
+                        Read Article <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="blog-card fade-in">
+                    <h3>Unearthing the potential of Large Language Models (LLMs)</h3>
+                    <a href="https://medium.com/@sumitdeole/unearthing-the-potential-of-large-language-models-llms-32a7d70a9f0c" class="blog-link">
+                        Read Article <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="blog-card fade-in">
+                    <h3>LLM That Actually Understands Your A/B Tests</h3>
+                    <a href="https://medium.com/@sumitdeole/llm-that-actually-understands-your-a-b-tests-and-writes-better-reports-than-your-analysts-2754d67e377f" class="blog-link">
+                        Read Article <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="blog-card fade-in">
+                    <h3>LLM-powered solution to make your city life easy</h3>
+                    <a href="https://medium.com/@sumitdeole/llm-powered-solution-to-make-your-city-life-easy-7eaabda6587e" class="blog-link">
+                        Read Article <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="blog-card fade-in">
+                    <h3>Make Sales Happen app: Targeting offline sales in real-time</h3>
+                    <a href="https://medium.com/@sumitdeole/unveiling-make-sales-happen-app-targeting-offline-sales-in-real-time-52f2f1dad828" class="blog-link">
+                        Read Article <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="section about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Research Publications</h2>
+                <p class="section-subtitle">Academic contributions to economics and financial analysis</p>
+            </div>
+            <div class="blog-grid">
+                <div class="blog-card fade-in">
+                    <h3>Chinese import competition and firm welfare (markups and productivity)</h3>
+                    <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4813591" class="blog-link">
+                        View Paper <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+                <div class="blog-card fade-in">
+                    <h3>European deep integration and firm welfare</h3>
+                    <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4811878" class="blog-link">
+                        View Paper <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+                <div class="blog-card fade-in">
+                    <h3>Prospect theory: Individual risk preferences and stock market participation puzzle</h3>
+                    <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5015365" class="blog-link">
+                        View Paper <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-contact">
+                <a href="mailto:sumit@example.com" class="footer-link">
+                    <i class="fas fa-envelope"></i> sumit@example.com
+                </a>
+                <a href="https://linkedin.com/in/sumitdeole" class="footer-link">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/sumitdeole" class="footer-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://medium.com/@sumitdeole" class="footer-link">
+                    <i class="fab fa-medium"></i> Medium
+                </a>
+                <a href="https://scholar.google.de/citations?user=BpmeH88AAAAJ&hl=en/" class="footer

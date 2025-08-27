@@ -3,610 +3,999 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sumit S. Deole - Financial AI Expert & Web Developer</title>
+    <title>Sumit Deole | Financial Economist & Data Scientist</title>
+    <meta name="description" content="PhD Economist specializing in Economic Psychology, Entrepreneurship, Fraud Detection, and AML with 4+ years of experience transitioning to advanced analytics in the private sector.">
+    <meta name="keywords" content="Economist, Risk Modeling, Fraud Detection, AML, Data Scientist, PhD Economics, Advanced Analytics">
+    <meta name="author" content="Sumit Deole, PhD">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Sumit Deole | Financial Economist & Data Scientist">
+    <meta property="og:description" content="PhD Economist specializing in Economic Psychology, Entrepreneurship, and AML">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sumitdeole.github.io">
+    <meta property="og:image" content="images/photograph.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #374151;
+            --accent: #10b981;
+            --light: #f3f4f6;
+            --dark: #1f2937;
+            --text: #374151;
+            --text-light: #6b7280;
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --transition: all 0.3s ease;
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --accent-color: #f59e0b;
-            --text-dark: #1f2937;
-            --text-light: #6b7280;
-            --bg-light: #f8fafc;
-            --bg-card: #ffffff;
-            --border-color: #e5e7eb;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-
+        
         body {
-            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            color: var(--text-dark);
-            background: var(--bg-light);
+            color: var(--text);
+            background-color: var(--white);
+            scroll-behavior: smooth;
         }
-
+        
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            color: var(--primary-dark);
+        }
+        
         .container {
+            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-
-        /* Header */
-        .header {
-            background: var(--bg-card);
-            box-shadow: var(--shadow);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: var(--text-dark);
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 6px;
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow);
         }
-
-        .nav-link:hover {
-            color: var(--primary-color);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: white;
-            padding: 8rem 0 4rem;
-            margin-top: 70px;
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .hero-text h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .hero-text .tagline {
-            font-size: 1.25rem;
-            margin-bottom: 1.5rem;
-            opacity: 0.9;
-        }
-
-        .hero-text p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            opacity: 0.8;
-        }
-
-        .hero-image {
-            text-align: center;
-        }
-
-        .profile-img {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            border: 5px solid rgba(255, 255, 255, 0.2);
-            object-fit: cover;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .contact-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .contact-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .contact-link:hover {
-            background: rgba(255, 255, 255, 0.2);
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            color: var(--white);
             transform: translateY(-2px);
         }
-
-        /* Section Styles */
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
         .section {
-            padding: 4rem 0;
+            padding: 80px 0;
         }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
+        
         .section-title {
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            color: var(--text-dark);
+            color: var(--dark);
+            text-align: center;
         }
-
+        
         .section-subtitle {
             font-size: 1.2rem;
             color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto;
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
-
-        /* About Section */
-        .about {
-            background: var(--bg-card);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-
-        .skill-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1rem;
-            background: var(--bg-light);
-            border-radius: 8px;
-            border-left: 4px solid var(--primary-color);
-        }
-
-        /* Project Cards */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .project-card {
-            background: var(--bg-card);
-            border-radius: 12px;
-            overflow: hidden;
+        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
             box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            border: 1px solid var(--border-color);
+            padding: 15px 0;
         }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-
-        .project-header {
-            padding: 1.5rem;
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-item {
+            margin-left: 2rem;
+        }
+        
+        .nav-link {
+            color: var(--text);
+            font-weight: 500;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .header-social {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            border-bottom: 1px solid var(--border-color);
+            margin-left: 2rem;
         }
-
-        .project-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 8px;
+        
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: var(--light);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            color: white;
+            color: var(--primary);
+            margin-left: 10px;
+            transition: var(--transition);
+        }
+        
+        .social-icon:hover {
+            background-color: var(--primary);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
         }
 
-        .project-info h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
+.timeline {
+  position: relative;
+  margin: 2rem auto;
+  padding: 2rem 0;
+  width: 80%; /* centers timeline, not hugging edge */
+}
 
-        .project-type {
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%; /* center line */
+  transform: translateX(-50%);
+  width: 3px;
+  height: 100%;
+  background: var(--primary);
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 1rem 2rem;
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+  text-align: left;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  top: 1.2rem;
+  left: 100%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  background: var(--primary);
+  border-radius: 50%;
+}
+
+.timeline-item:nth-child(even)::before {
+  left: 0;
+  transform: translateX(-50%);
+}
+
+.timeline-date {
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.3rem;
+  padding-left: 10px;  /* space between dot and date */
+  padding-right: 10px; /* for right-side items */
+  display: inline-block;
+}
+
+.timeline-content h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--dark);
+}
+
+.timeline-content .company {
+  font-size: 0.95rem;
+  color: var(--text-light);
+}
+
+
+        /* Hero Section */
+        .hero {
+            padding-top: 150px;
+            padding-bottom: 80px;
+            background: linear-gradient(135deg, #f0f4ff 0%, #e6f0ff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: rgba(37, 99, 235, 0.1);
+            z-index: 0;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(16, 185, 129, 0.1);
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+        
+        .hero-text h1 span {
+            color: var(--primary);
+        }
+        
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
             color: var(--text-light);
-            font-size: 0.9rem;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .hero-image {
+            position: relative;
+            text-align: center;
+        }
+        
+        .hero-image img {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--white);
+            box-shadow: var(--shadow);
+        }
+        
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        
+        .about-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+        
+        .about-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;  
         }
 
-        .project-body {
-            padding: 1.5rem;
+        .skill-tag {
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary);
+            background: rgba( var(--primary-rgb), 0.1); /* subtle tinted background */
+            border: 1px solid var(--primary);
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .skill-tag:hover {
+            background: var(--primary);
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(var(--primary-rgb), 0.4);
+        }
+        
+        /* Experience Section */
+        .experience-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .experience-item {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+            padding: 25px;
+            border-radius: 10px;
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+        }
+        
+        .experience-date {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .experience-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+        
+        .experience-content .company {
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 12px;
+            display: block;
+        }
+        
+        .experience-content ul {
+            padding-left: 20px;
+            color: var(--text);
+        }
+        
+        .experience-content li {
+            margin-bottom: 8px;
+        }
+        
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
         }
 
         .project-links {
             display: flex;
-            gap: 0.75rem;
-            margin-top: 1rem;
-        }
-
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: var(--primary-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            transition: background-color 0.3s ease;
-        }
-
-        .project-link:hover {
-            background: var(--secondary-color);
-        }
-
-        .project-link.secondary {
-            background: var(--bg-light);
-            color: var(--text-dark);
-            border: 1px solid var(--border-color);
-        }
-
-        .project-link.secondary:hover {
-            background: var(--text-light);
-            color: white;
-        }
-
-        /* Blog/Research Section */
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .blog-card {
-            background: var(--bg-card);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--accent-color);
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-        }
-
-        .blog-card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .blog-card h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            line-height: 1.4;
-        }
-
-        .blog-link {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.25rem;
-            margin-top: 0.5rem;
-        }
-
-        .blog-link:hover {
-            text-decoration: underline;
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--text-dark);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-
-        .footer-contact {
-            display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .footer-link {
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .footer-link:hover {
-            color: var(--accent-color);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
+            gap: 1rem; /* space between Project 1 & 2 */
+            margin-top: 1rem;
             }
 
-            .hero-text h1 {
+        .project-content {
+            padding: 20px;
+        }
+        
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .project-desc {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .project-tag {
+            padding: 4px 10px;
+            background-color: var(--light);
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: var(--text);
+        }
+        
+        /* Research Section */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .research-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .research-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .research-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--dark);
+        }
+        
+        .research-desc {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        
+        /* Blogs Section */
+        .blogs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .blog-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .blog-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .blog-content {
+            padding: 20px;
+        }
+        
+        .blog-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .blog-desc {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        .contact-form {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        
+        .footer-desc {
+            color: #d1d5db;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-heading {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #d1d5db;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #9ca3af;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content,
+            .about-grid,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .experience-item {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
                 font-size: 2rem;
             }
-
-            .about-content {
-                grid-template-columns: 1fr;
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
             }
-
+            
             .nav-menu {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                background-color: var(--white);
+                width: 80%;
+                height: 100vh;
+                flex-direction: column;
+                padding: 40px 20px;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                transition: 0.4s;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-item {
+                margin: 15px 0;
+            }
+            
+            .header-social {
                 display: none;
             }
-
-            .contact-links {
-                flex-wrap: wrap;
-                justify-content: center;
+            
+            .hamburger {
+                display: block;
             }
-
-            .projects-grid {
+            
+            .footer-grid {
                 grid-template-columns: 1fr;
             }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-contact {
+        }
+        
+        @media (max-width: 576px) {
+            .hero-buttons {
                 flex-direction: column;
-                gap: 1rem;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .research-grid,
+            .blogs-grid {
+                grid-template-columns: 1fr;
             }
         }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in {
-            animation: fadeInUp 0.6s ease-out;
-        }
-
-        /* Color variants for project icons */
-        .bg-blue { background: var(--primary-color); }
-        .bg-green { background: #10b981; }
-        .bg-purple { background: #8b5cf6; }
-        .bg-red { background: #ef4444; }
-        .bg-orange { background: var(--accent-color); }
-        .bg-indigo { background: #6366f1; }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav container">
-            <a href="#" class="logo">Sumit S. Deole</a>
-            <ul class="nav-menu">
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#projects" class="nav-link">AI Projects</a></li>
-                <li><a href="#webdev" class="nav-link">Web Development</a></li>
-                <li><a href="#research" class="nav-link">Research</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">Sumit<span>Deole</span></a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">AML</a></li>
+                <li class="nav-item"><a href="#WDprojects" class="nav-link">WebDev</a></li>
+                <li class="nav-item"><a href="#research" class="nav-link">Research</a></li>
+                <li class="nav-item"><a href="#blogs" class="nav-link">Blogs</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-        </nav>
+            
+            <div class="header-social">
+                <a href="https://linkedin.com/in/sumitdeole" class="social-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/sumitdeole" class="social-icon">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://medium.com/@sumitdeole" class="social-icon">
+                    <i class="fab fa-medium-m"></i>
+                </a>
+            </div>
+            
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content fade-in">
-                <div class="hero-text">
-                    <h1>Financial AI Expert & Web Developer</h1>
-                    <p class="tagline">Transforming Finance with Advanced Analytics & AI</p>
-                    <p>I have >4 years of experience as a financial economist (Focus: Credit Risk Modelling and Entrepreneurship). Recently, I have transitioned to employing advanced analytics for business use cases. Now, I aim to shift my focus to the private sector (fraud detection and AML), utilize my expertise in advisory roles, and create business value.</p>
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Sumit Deole: <span>Financial Economist</span> & Data Scientist</h1>
+                <p>PhD Economist with 4+ years of experience specializing in Economic Psychology, Risk Modeling, Fraud Detection, and AML. Transitioning expertise to create business value through advanced analytics.</p>
                     
-                    <div class="contact-links">
-                        <a href="mailto:sumit@example.com" class="contact-link">
-                            <i class="fas fa-envelope"></i> Email
-                        </a>
-                        <a href="https://linkedin.com/in/sumitdeole" class="contact-link">
-                            <i class="fab fa-linkedin"></i> LinkedIn
-                        </a>
-                        <a href="https://github.com/sumitdeole" class="contact-link">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                        <a href="https://medium.com/@sumitdeole" class="contact-link">
-                            <i class="fab fa-medium"></i> Medium
-                        </a>
+                    <div class="about-skills">
+                        <span class="skill-tag">GenAI/LLM</span>
+                        <span class="skill-tag">AI & ML</span>
+                        <span class="skill-tag">Financial Economics</span>
+                        <span class="skill-tag">AML & Fraud Detection</span>
+                        <span class="skill-tag">Python & SQL</span>
+                        <span class="skill-tag">Power BI</span>
                     </div>
+
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn">Get In Touch</a>
+                    <a href="#projects" class="btn btn-outline">View My Work</a>
                 </div>
-                <div class="hero-image">
-                    <!-- Replace with your actual photo -->
-                    <img src="images/photograph.png" alt="Sumit S. Deole" class="profile-img">
-                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Replace with your actual photo -->
+                <img src="images/photograph.png" alt="Sumit Deole, PhD">
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="section about">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">A unique blend of academic rigor and practical innovation in financial technology</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I currently work as a research and teaching fellow at the Department of Business Administration in Trier University. Previously, I worked as a Product Owner at Cognigy GmbH, a leader in Conversational AI.</p>
-                    
-                    <p>With over ten years of expertise in causal inference methods and recent intensive skill-building in machine learning and deep learning, I bring a unique perspective to financial technology and risk management.</p>
-                    
-                    <p>I hold degrees from prestigious institutions including VJTI Mumbai, Toulouse School of Economics, AMSE Marseille, and University of Halle-Wittenberg, with research published in reputed economics journals.</p>
-                </div>
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <i class="fas fa-chart-line"></i>
-                        <span>Credit Risk Modeling</span>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>Fraud Detection & AML</span>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-robot"></i>
-                        <span>Machine Learning & AI</span>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-code"></i>
-                        <span>Web Development</span>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-brain"></i>
-                        <span>Large Language Models</span>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-chart-bar"></i>
-                        <span>Causal Inference</span>
-                    </div>
-                </div>
+
+    <!-- Experience Section -->
+    <section class="section" id="experience" style="background-color: #f9fafb;">
+    <div class="container">
+        <h2 class="section-title">Professional Experience</h2>
+        <p class="section-subtitle">My journey in financial economics and data science</p>
+
+        <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-date">2023 – Present</div>
+            <div class="timeline-content">
+            <h3>Financial Economist</h3>
+            <span class="company">Department of Business Administration, Trier University</span>
             </div>
         </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">2022</div>
+            <div class="timeline-content">
+            <h3>Product Owner</h3>
+            <span class="company">Cognigy GmbH</span>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">2021</div>
+            <div class="timeline-content">
+            <h3>Economist</h3>
+            <span class="company">Bundeswehr University Munich</span>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">2019 – 2021</div>
+            <div class="timeline-content">
+            <h3>Economist</h3>
+            <span class="company">TU Dortmund</span>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">2013 – 2019</div>
+            <div class="timeline-content">
+            <h3>Ph.D. in Economics</h3>
+            <span class="company">University of Halle-Wittenberg</span>
+            </div>
+        </div>
+        </div>
+    </div>
     </section>
 
-    <!-- AI Projects Section -->
-    <section id="projects" class="section">
+    <!-- Projects Section -->
+    <section class="section" id="projects">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Fraud Detection & AML Projects</h2>
-                <p class="section-subtitle">Cutting-edge AI solutions for financial risk management</p>
-            </div>
+            <h2 class="section-title">AML Projects</h2>
+            <p class="section-subtitle">A selection of my work in financial analytics</p>
             <div class="projects-grid">
-                <div class="project-card fade-in">
-                    <div class="project-header">
-                        <div class="project-icon bg-red">
-                            <i class="fas fa-exclamation-triangle"></i>
+            
+                <!-- Card 1 -->
+                <div class="project-card">
+                    <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect fill='%23f3f4f6' width='300' height='200'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3ELLM Projects%3C/text%3E%3C/svg%3E" alt="LLM Projects" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">GenAI/LLM for AML and Fraud Detection</h3>
+                        <p class="project-desc">Leveraging large language models for prediction and automated reporting in financial security.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">GenAI/LLM</span>
+                            <span class="project-tag">AI & ML</span>
+                            <span class="project-tag">Python</span>
                         </div>
-                        <div class="project-info">
-                            <h3>Credit Risk Rating</h3>
-                            <span class="project-type">Fraud Risk Scoring</span>
-                        </div>
+                    <div class="project-links">
+                        <a href="https://github.com/sumitdeole/LLM_numerical_data" class="btn btn-outline">Project 1</a>
+                        <a href="https://github.com/sumitdeole/LLM_text_data" class="btn btn-outline">Project 2</a>
                     </div>
-                    <div class="project-body">
-                        <p>Advanced credit risk assessment system using machine learning algorithms to evaluate and score fraud risk in financial transactions.</p>
+                </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="project-card">
+                    <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect fill='%23f3f4f6' width='300' height='200'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3EFraud Detection%3C/text%3E%3C/svg%3E" alt="Fraud Detection" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">AI for AML & Fraud Detection</h3>
+                        <p class="project-desc">Advanced anomaly detection system for identifying fraudulent transactions and money laundering activities.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">AI & ML</span>
+                            <span class="project-tag">Anomaly Detection</span>
+                            <span class="project-tag">Python</span>
+                        </div>
                         <div class="project-links">
-                            <a href="https://github.com/sumitdeole/Fraud_risk_scoring" class="project-link">
-                                <i class="fab fa-github"></i> View Code
-                            </a>
+                        <a href="https://github.com/sumitdeole/AML_anomaly_detection" class="btn btn-outline">Project 1</a>
+                        <a href="https://github.com/sumitdeole/aml_dashboard" class="btn btn-outline">Project 2</a>
                         </div>
                     </div>
                 </div>
-
-                <div class="project-card fade-in">
-                    <div class="project-header">
-                        <div class="project-icon bg-blue">
-                            <i class="fas fa-search"></i>
+                
+                <!-- Card 3 -->
+                <div class="project-card">
+                    <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect fill='%23f3f4f6' width='300' height='200'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3ECredit Risk%3C/text%3E%3C/svg%3E" alt="Credit Risk Rating" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Customer Credit Risk Scoring</h3>
+                        <p class="project-desc">ML-based credit risk assessment system with improved prediction accuracy.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">AL & ML</span>
+                            <span class="project-tag">Risk Assessment</span>
+                            <span class="project-tag">Python</span>
                         </div>
-                        <div class="project-info">
-                            <h3>AI-Powered AML Detection</h3>
-                            <span class="project-type">Anomaly Detection</span>
-                        </div>
-                    </div>
-                    <div class="project-body">
-                        <p>Sophisticated fraud detection and anti-money laundering system using AI to identify suspicious patterns and anomalies in financial data.</p>
                         <div class="project-links">
-                            <a href="https://github.com/sumitdeole/AML_anomaly_detection" class="project-link">
-                                <i class="fab fa-github"></i> View Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card fade-in">
-                    <div class="project-header">
-                        <div class="project-icon bg-purple">
-                            <i class="fas fa-file-alt"></i>
-                        </div>
-                        <div class="project-info">
-                            <h3>GenAI for Numerical Analysis</h3>
-                            <span class="project-type">LLM + Fraud Detection</span>
-                        </div>
-                    </div>
-                    <div class="project-body">
-                        <p>Innovative application of Large Language Models for numerical data analysis in fraud detection with automated reporting capabilities.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/sumitdeole/LLM_numerical_data" class="project-link">
-                                <i class="fab fa-github"></i> View Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card fade-in">
-                    <div class="project-header">
-                        <div class="project-icon bg-green">
-                            <i class="fas fa-comments"></i>
-                        </div>
-                        <div class="project-info">
-                            <h3>LLM Text Analysis</h3>
-                            <span class="project-type">Text Data Processing</span>
-                        </div>
-                    </div>
-                    <div class="project-body">
-                        <p>Advanced text analysis using Large Language Models for processing unstructured financial data and generating automated compliance reports.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/sumitdeole/LLM_text_data" class="project-link">
-                                <i class="fab fa-github"></i> View Code
-                            </a>
+                            <a href="https://github.com/sumitdeole/Fraud_risk_scoring" class="btn btn-outline">Project 1</a>
+                            <a href="https://github.com/sumitdeole/customer_credit_risk_analysis" class="btn btn-outline">Project 2</a>
                         </div>
                     </div>
                 </div>
@@ -614,169 +1003,302 @@
         </div>
     </section>
 
-    <!-- Web Development Section -->
-    <section id="webdev" class="section about">
+
+    <!-- WebDev Projects Section -->
+    <section class="section" id="WDprojects">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Web Development Portfolio</h2>
-                <p class="section-subtitle">Professional web designs showcasing modern UI/UX principles</p>
-            </div>
-            <div class="projects-grid">
-                <div class="project-card fade-in">
-                    <div class="project-header">
-                        <div class="project-icon bg-indigo">
-                            <i class="fas fa-language"></i>
+            <h2 class="section-title">WebDev Projects</h2>
+            <p class="section-subtitle">A selection of my work in web development</p>
+                <div class="projects-grid">            
+                <div class="project-card">
+                    <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect fill='%23f3f4f6' width='300' height='200'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3ELearnEnglish%3C/text%3E%3C/svg%3E" alt="EnglishVision" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Education Platform</h3>
+                        <p class="project-desc">Modern educational platform design for language learning with interactive features.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Web Design</span>
+                            <span class="project-tag">UI/UX</span>
+                            <span class="project-tag">HTML/CSS/JS</span>
                         </div>
-                        <div class="project-info">
-                            <h3>English Vision - Blog Platform</h3>
-                            <span class="project-type">Educational Website</span>
-                        </div>
-                    </div>
-                    <div class="project-body">
-                        <p>Modern blog platform design for English learning resources with responsive layout and engaging user interface.</p>
                         <div class="project-links">
-                            <a href="https://sumitdeole.github.io/englishvision-preview-2" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>
+                            <a href="https://github.com/sumitdeole/learnenglish" class="btn btn-outline">View Project</a>
                         </div>
                     </div>
                 </div>
-
-                <div class="project-card fade-in">
-                    <div class="project-header">
-                        <div class="project-icon bg-orange">
-                            <i class="fas fa-graduation-cap"></i>
+                <div class="project-card">
+                    <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect fill='%23f3f4f6' width='300' height='200'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3EPresentationTemplate%3C/text%3E%3C/svg%3E" alt="EnglishVision" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Presentation Template</h3>
+                        <p class="project-desc">Modern HTML based template for creating professional presentations.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">UI/UX</span>
+                            <span class="project-tag">Web Design</span>
+                            <span class="project-tag">HTML/CSS/JS</span>
                         </div>
-                        <div class="project-info">
-                            <h3>English Vision - Landing Page</h3>
-                            <span class="project-type">Marketing Website</span>
+                        <div class="project-links"> 
+                        <a href="https://sumitdeole.github.io/ppt-template/" class="btn btn-outline">View Project</a>
                         </div>
-                    </div>
-                    <div class="project-body">
-                        <p>Professional landing page design for English learning services with modern aesthetics and conversion-focused layout.</p>
+                    </div>                  
+                </div>
+    
+                <div class="project-card">
+                    <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect fill='%23f3f4f6' width='300' height='200'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3EPortfolio%3C/text%3E%3C/svg%3E" alt="EnglishVision" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Personal Portfolio</h3>
+                        <p class="project-desc">Modern portfolio webpage to showcase diverse skills and projects.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">UI/UX</span>
+                            <span class="project-tag">Web Design</span>
+                            <span class="project-tag">HTML/CSS/JS</span>
+                        </div>
                         <div class="project-links">
-                            <a href="https://sumitdeole.github.io/englishvision-preview" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>
+                            <a href="https://sumitdeole.github.io/" class="btn btn-outline">View Project</a>
                         </div>
                     </div>
-                </div>
-
-                <div class="project-card fade-in">
-                    <div class="project-header">
-                        <div class="project-icon bg-red">
-                            <i class="fas fa-presentation"></i>
-                        </div>
-                        <div class="project-info">
-                            <h3>PPT Template Design</h3>
-                            <span class="project-type">Presentation Template</span>
-                        </div>
-                    </div>
-                    <div class="project-body">
-                        <p>Professional PowerPoint template design with modern styling and clean layouts for business presentations.</p>
-                        <div class="project-links">
-                            <a href="https://sumitdeole.github.io/ppt-template/" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog/Medium Section -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Latest Blogs & Articles</h2>
-                <p class="section-subtitle">Insights on AI, fraud detection, and financial technology</p>
-            </div>
-            <div class="blog-grid">
-                <div class="blog-card fade-in">
-                    <h3>We All Know AI Can Be Biased. Nobody Shows You How to Fix It.</h3>
-                    <a href="https://medium.com/@sumitdeole/we-all-know-ai-can-be-biased-nobody-shows-you-how-to-fix-it-c5c23f72f95c" class="blog-link">
-                        Read Article <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="blog-card fade-in">
-                    <h3>The Dual Promise of LLMs: Mistral for Fraud Detection & Risk Reporting</h3>
-                    <a href="https://medium.com/@sumitdeole/the-dual-promise-of-llms-fraud-detection-and-economic-analysis-in-financial-services-a0ced58e690c" class="blog-link">
-                        Read Article <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="blog-card fade-in">
-                    <h3>Unearthing the potential of Large Language Models (LLMs)</h3>
-                    <a href="https://medium.com/@sumitdeole/unearthing-the-potential-of-large-language-models-llms-32a7d70a9f0c" class="blog-link">
-                        Read Article <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="blog-card fade-in">
-                    <h3>LLM That Actually Understands Your A/B Tests</h3>
-                    <a href="https://medium.com/@sumitdeole/llm-that-actually-understands-your-a-b-tests-and-writes-better-reports-than-your-analysts-2754d67e377f" class="blog-link">
-                        Read Article <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="blog-card fade-in">
-                    <h3>LLM-powered solution to make your city life easy</h3>
-                    <a href="https://medium.com/@sumitdeole/llm-powered-solution-to-make-your-city-life-easy-7eaabda6587e" class="blog-link">
-                        Read Article <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="blog-card fade-in">
-                    <h3>Make Sales Happen app: Targeting offline sales in real-time</h3>
-                    <a href="https://medium.com/@sumitdeole/unveiling-make-sales-happen-app-targeting-offline-sales-in-real-time-52f2f1dad828" class="blog-link">
-                        Read Article <i class="fas fa-arrow-right"></i>
-                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Research Section -->
-    <section id="research" class="section about">
+    <section class="section" id="research" style="background-color: #f9fafb;">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Research Publications</h2>
-                <p class="section-subtitle">Academic contributions to economics and financial analysis</p>
+            <h2 class="section-title">Research Publications</h2>
+            <p class="section-subtitle">Academic contributions in financial economics and risk management</p>
+            
+            <div class="research-grid">
+                <div class="research-card">
+                    <h3 class="research-title">Chinese import competition and firm welfare (markups and productivity)</h3>
+                    <p class="research-desc">Research examining the impact of Chinese import competition on firm markups and productivity metrics.</p>
+                    <div class="project-links">
+                        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4813591" class="btn btn-outline">Read Paper</a>
+                    </div>
+                </div>
+                
+                <div class="research-card">
+                    <h3 class="research-title">European deep integration and firm welfare</h3>
+                    <p class="research-desc">Analysis of how European economic integration affects firm performance and welfare metrics.</p>
+                    <div class="project-links">
+                        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4811878" class="btn btn-outline">Read Paper</a>
+                    </div>
+                </div>
+                
+                <div class="research-card">
+                    <h3 class="research-title">Prospect theory: Individual risk preferences and stock market participation puzzle</h3>
+                    <p class="research-desc">Investigating how prospect theory explains individual risk preferences and stock market participation decisions.</p>
+                    <div class="project-links">
+                        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5015365" class="btn btn-outline">Read Paper</a>
+                    </div>
+                </div>
             </div>
-            <div class="blog-grid">
-                <div class="blog-card fade-in">
-                    <h3>Chinese import competition and firm welfare (markups and productivity)</h3>
-                    <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4813591" class="blog-link">
-                        View Paper <i class="fas fa-external-link-alt"></i>
-                    </a>
+        </div>
+    </section>
+
+    <!-- Blogs Section -->
+    <section class="section" id="blogs">
+        <div class="container">
+            <h2 class="section-title">Latest Blogs</h2>
+            <p class="section-subtitle">Insights on AI, LLMs, and financial analytics</p>
+            
+            <div class="blogs-grid">
+                <div class="blog-card">
+                    <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='350' height='180' viewBox='0 0 350 180'%3E%3Crect fill='%23f3f4f6' width='350' height='180'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3EAI Bias%3C/text%3E%3C/svg%3E" alt="AI Bias" class="blog-img">
+                    <div class="blog-content">
+                        <h3 class="blog-title">We All Know AI Can Be Biased. Nobody Shows You How to Fix It.</h3>
+                        <p class="blog-desc">Practical approaches to identifying and mitigating bias in AI systems.</p>
+                        <div class="project-links">
+                            <a href="https://medium.com/@sumitdeole/we-all-know-ai-can-be-biased-nobody-shows-you-how-to-fix-it-c5c23f72f95c" class="btn btn-outline">Read Article</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="blog-card fade-in">
-                    <h3>European deep integration and firm welfare</h3>
-                    <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4811878" class="blog-link">
-                        View Paper <i class="fas fa-external-link-alt"></i>
-                    </a>
+                
+                <div class="blog-card">
+                    <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='350' height='180' viewBox='0 0 350 180'%3E%3Crect fill='%23f3f4f6' width='350' height='180'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3ELLMs%3C/text%3E%3C/svg%3E" alt="LLMs" class="blog-img">
+                    <div class="blog-content">
+                        <h3 class="blog-title">The Dual Promise of LLMs: Mistral for Fraud Detection & Risk Reporting</h3>
+                        <p class="blog-desc">Exploring how large language models can transform fraud detection and financial risk analysis.</p>
+                        <div class="project-links">
+                            <a href="https://medium.com/@sumitdeole/the-dual-promise-of-llms-fraud-detection-and-economic-analysis-in-financial-services-a0ced58e690c" class="btn btn-outline">Read Article</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="blog-card fade-in">
-                    <h3>Prospect theory: Individual risk preferences and stock market participation puzzle</h3>
-                    <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5015365" class="blog-link">
-                        View Paper <i class="fas fa-external-link-alt"></i>
-                    </a>
+                
+                <div class="blog-card">
+                    <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='350' height='180' viewBox='0 0 350 180'%3E%3Crect fill='%23f3f4f6' width='350' height='180'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3EAB Testing%3C/text%3E%3C/svg%3E" alt="A/B Testing" class="blog-img">
+                    <div class="blog-content">
+                        <h3 class="blog-title">LLM That Actually Understands Your A/B Tests (And Writes Better Reports)</h3>
+                        <p class="blog-desc">How LLMs can revolutionize A/B testing analysis and reporting processes.</p>
+                        <div class="project-links">
+                            <a href="https://medium.com/@sumitdeole/llm-that-actually-understands-your-a-b-tests-and-writes-better-reports-than-your-analysts-2754d67e377f" class="btn btn-outline">Read Article</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact" style="background-color: #f9fafb;">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">I'm interested in advisory roles and opportunities in fraud detection and AML</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>sumit.deole@example.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Based in Germany, open to remote opportunities</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div>
+                            <h3>Availability</h3>
+                            <p>Available for consulting projects and advisory roles</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div>
+                            <h3>Connect</h3>
+                            <div class="social-links">
+                                <a href="https://linkedin.com/in/sumitdeole" class="social-link">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="https://github.com/sumitdeole" class="social-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://medium.com/@sumitdeole" class="social-link">
+                                    <i class="fab fa-medium-m"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Your Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="footer">
+    <footer>
         <div class="container">
-            <div class="footer-contact">
-                <a href="mailto:sumit@example.com" class="footer-link">
-                    <i class="fas fa-envelope"></i> sumit@example.com
-                </a>
-                <a href="https://linkedin.com/in/sumitdeole" class="footer-link">
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
-                <a href="https://github.com/sumitdeole" class="footer-link">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-                <a href="https://medium.com/@sumitdeole" class="footer-link">
-                    <i class="fab fa-medium"></i> Medium
-                </a>
-                <a href="https://scholar.google.de/citations?user=BpmeH88AAAAJ&hl=en/" class="footer
+            <div class="footer-grid">
+                <div>
+                    <a href="#" class="footer-logo">SumitDeole</a>
+                    <p class="footer-desc">Financial Economist and Data Scientist specializing in Credit Risk Modeling, Fraud Detection, and AML applications.</p>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/sumitdeole" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/sumitdeole" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://medium.com/@sumitdeole" class="social-link"><i class="fab fa-medium-m"></i></a>
+                        <a href="mailto:sumit.deole@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#research">Research</a></li>
+                        <li><a href="#blogs">Blogs</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Expertise</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Credit Risk Modeling</a></li>
+                        <li><a href="#">Fraud Detection</a></li>
+                        <li><a href="#">AML Solutions</a></li>
+                        <li><a href="#">Data Science</a></li>
+                        <li><a href="#">Financial Economics</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Dr. Sumit Deole. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a nav link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+        
+        // Scroll animation
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('scrolled', window.scrollY > 100);
+        });
+    </script>
+</body>
+</html>

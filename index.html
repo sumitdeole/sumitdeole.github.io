@@ -520,6 +520,7 @@
         }
         
         /* Research Section */
+        /* Research Section */
         .research-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -539,6 +540,28 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
         
+        .research-category {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light);
+            text-align: center;
+        }
+        
+        .research-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .research-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
         .research-title {
             font-size: 1.2rem;
             font-weight: 600;
@@ -550,6 +573,59 @@
             color: var(--text-light);
             margin-bottom: 15px;
             font-size: 0.95rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 6px;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        
+        @media (max-width: 768px) {
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-links {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
         }
         
         /* Blogs Section */
@@ -1061,35 +1137,54 @@
     </section>
 
     <!-- Research Section -->
+    <!-- Research Section -->
     <section class="section" id="research" style="background-color: #f9fafb;">
         <div class="container">
             <h2 class="section-title">Research Publications</h2>
             <p class="section-subtitle">Academic contributions in financial economics and risk management</p>
             
             <div class="research-grid">
+                <!-- Entrepreneurship Research Card -->
                 <div class="research-card">
-                    <h3 class="research-title">Chinese import competition and firm welfare (markups and productivity)</h3>
-                    <p class="research-desc">Research examining the impact of Chinese import competition on firm markups and productivity metrics.</p>
-                    <div class="project-links">
-                        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4813591" class="btn btn-outline">Read Paper</a>
+                    <h3 class="research-category">Entrepreneurship & Trade</h3>
+                    
+                    <div class="research-item">
+                        <h4 class="research-title">Chinese import competition and firm welfare (markups and productivity)</h4>
+                        <p class="research-desc">Research examining the impact of Chinese import competition on firm markups and productivity metrics.</p>
+                        <div class="project-links">
+                            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4813591" class="btn btn-outline">Read Paper</a>
+                        </div>
+                    </div>
+                    
+                    <div class="research-item">
+                        <h4 class="research-title">European deep integration and firm welfare</h4>
+                        <p class="research-desc">Analysis of how European economic integration affects firm performance and welfare metrics.</p>
+                        <div class="project-links">
+                            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4811878" class="btn btn-outline">Read Paper</a>
+                        </div>
                     </div>
                 </div>
                 
+                <!-- AI & Causal Inference Research Card -->
                 <div class="research-card">
-                    <h3 class="research-title">European deep integration and firm welfare</h3>
-                    <p class="research-desc">Analysis of how European economic integration affects firm performance and welfare metrics.</p>
-                    <div class="project-links">
-                        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4811878" class="btn btn-outline">Read Paper</a>
+                    <h3 class="research-category">AI & Causal Inference</h3>
+                    
+                    <div class="research-item">
+                        <h4 class="research-title">Causal Inference with Machine Learning</h4>
+                        <p class="research-desc">Combining machine learning with causal inference methods for more robust economic analysis.</p>
+                        <div class="project-links">
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=BpmeH88AAAAJ&citation_for_view=BpmeH88AAAAJ:bFI3QPDXJZMC" class="btn btn-outline">Read Paper</a>
+                        </div>
+                    </div>
+                    
+                    <div class="research-item">
+                        <h4 class="research-title">AI Applications in Economic Analysis</h4>
+                        <p class="research-desc">Exploring how artificial intelligence can enhance traditional economic modeling approaches.</p>
+                        <div class="project-links">
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=BpmeH88AAAAJ&citation_for_view=BpmeH88AAAAJ:LkGwnXOMwfcC" class="btn btn-outline">Read Paper</a>
+                        </div>
                     </div>
                 </div>
-                
-                 <!-- <div class="research-card">
-                    <h3 class="research-title">Prospect theory: Individual risk preferences and stock market participation puzzle</h3>
-                    <p class="research-desc">Investigating how prospect theory explains individual risk preferences and stock market participation decisions.</p>
-                    <div class="project-links">
-                        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5015365" class="btn btn-outline">Read Paper</a>
-                    </div>
-                </div> -->
             </div>
         </div>
     </section>

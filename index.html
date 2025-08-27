@@ -520,7 +520,53 @@
         }
         
         /* Research Section */
-        /* Research Section */
+        /* Research Tabs */
+        .research-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--light);
+            padding-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .tab-btn {
+            padding: 12px 24px;
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            margin: 0 10px;
+        }
+        
+        .tab-btn:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .tab-btn.active {
+            color: var(--primary);
+        }
+        
+        .tab-btn.active:after {
+            width: 100%;
+        }
+        
+        .tab-btn:hover {
+            color: var(--primary);
+        }
+        
+        /* Research Grid */
         .research-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -533,6 +579,9 @@
             padding: 25px;
             box-shadow: var(--shadow);
             transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
         
         .research-card:hover {
@@ -540,26 +589,15 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
         
-        .research-category {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--light);
-            text-align: center;
-        }
-        
-        .research-item {
-            margin-bottom: 25px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .research-item:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
+        .research-category-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background-color: rgba(16, 185, 129, 0.1);
+            color: var(--accent);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
         }
         
         .research-title {
@@ -567,12 +605,14 @@
             font-weight: 600;
             margin-bottom: 12px;
             color: var(--dark);
+            line-height: 1.4;
         }
         
         .research-desc {
             color: var(--text-light);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             font-size: 0.95rem;
+            flex-grow: 1;
         }
         
         .btn {
@@ -588,6 +628,7 @@
             box-shadow: var(--shadow);
             text-decoration: none;
             font-size: 0.9rem;
+            text-align: center;
         }
         
         .btn:hover {
@@ -607,10 +648,29 @@
             color: var(--white);
         }
         
-        .project-links {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
+        /* Tab content */
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .research-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tab-btn {
+                margin: 5px 0;
+                width: 200px;
+            }
+            
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
         }
         
         @media (max-width: 768px) {
@@ -627,8 +687,53 @@
                 text-align: center;
             }
         }
+
+                /* Blog Tabs */
+        .blog-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--light);
+            padding-bottom: 10px;
+        }
         
-        /* Blogs Section */
+        .tab-btn {
+            padding: 12px 24px;
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            margin: 0 10px;
+        }
+        
+        .tab-btn:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .tab-btn.active {
+            color: var(--primary);
+        }
+        
+        .tab-btn.active:after {
+            width: 100%;
+        }
+        
+        .tab-btn:hover {
+            color: var(--primary);
+        }
+
+        /* Blog Grid */
         .blogs-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -641,6 +746,9 @@
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
         
         .blog-card:hover {
@@ -656,6 +764,20 @@
         
         .blog-content {
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        
+        .blog-category {
+            display: inline-block;
+            padding: 4px 12px;
+            background-color: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 12px;
         }
         
         .blog-title {
@@ -663,14 +785,74 @@
             font-weight: 600;
             margin-bottom: 10px;
             color: var(--dark);
+            line-height: 1.4;
         }
         
         .blog-desc {
             color: var(--text-light);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             font-size: 0.95rem;
+            flex-grow: 1;
         }
         
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 6px;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        /* Blog tab content */
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .blog-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tab-btn {
+                margin: 5px 0;
+                width: 200px;
+            }
+            
+            .blogs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* Contact Section */
         .contact-container {
             display: grid;
@@ -1026,7 +1208,7 @@
                 <div class="project-card">
                     <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect fill='%23f3f4f6' width='300' height='200'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3ELLM Projects%3C/text%3E%3C/svg%3E" alt="LLM Projects" class="project-img">
                     <div class="project-content">
-                        <h3 class="project-title">GenAI/LLM for AML and Fraud Detection</h3>
+                        <h3 class="project-title">GenAI for AML & Fraud Detection</h3>
                         <p class="project-desc">Leveraging large language models for prediction and automated reporting in financial security.</p>
                         <div class="project-tags">
                             <span class="project-tag">GenAI/LLM</span>
@@ -1063,7 +1245,7 @@
                     <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect fill='%23f3f4f6' width='300' height='200'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3ECredit Risk%3C/text%3E%3C/svg%3E" alt="Credit Risk Rating" class="project-img">
                     <div class="project-content">
                         <h3 class="project-title">Customer Credit Risk Scoring</h3>
-                        <p class="project-desc">ML-based credit risk assessment system with improved prediction accuracy.</p>
+                        <p class="project-desc">ML-based credit risk assessment system with improved risk prediction accuracy and credit scoring.</p>
                         <div class="project-tags">
                             <span class="project-tag">AL & ML</span>
                             <span class="project-tag">Risk Assessment</span>
@@ -1105,7 +1287,7 @@
                     <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect fill='%23f3f4f6' width='300' height='200'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3EPresentationTemplate%3C/text%3E%3C/svg%3E" alt="EnglishVision" class="project-img">
                     <div class="project-content">
                         <h3 class="project-title">Presentation Template</h3>
-                        <p class="project-desc">Modern HTML based template for creating professional presentations.</p>
+                        <p class="project-desc">HTML based template for creating professional presentations.</p>
                         <div class="project-tags">
                             <span class="project-tag">UI/UX</span>
                             <span class="project-tag">Web Design</span>
@@ -1121,7 +1303,7 @@
                     <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect fill='%23f3f4f6' width='300' height='200'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3EPortfolio%3C/text%3E%3C/svg%3E" alt="EnglishVision" class="project-img">
                     <div class="project-content">
                         <h3 class="project-title">Personal Portfolio</h3>
-                        <p class="project-desc">Modern portfolio webpage to showcase diverse skills and projects.</p>
+                        <p class="project-desc">A portfolio webpage to showcase diverse skills and projects.</p>
                         <div class="project-tags">
                             <span class="project-tag">UI/UX</span>
                             <span class="project-tag">Web Design</span>
@@ -1137,57 +1319,74 @@
     </section>
 
     <!-- Research Section -->
-    <!-- Research Section -->
     <section class="section" id="research" style="background-color: #f9fafb;">
         <div class="container">
             <h2 class="section-title">Research Publications</h2>
             <p class="section-subtitle">Academic contributions in financial economics and risk management</p>
             
-            <div class="research-grid">
-                <!-- Entrepreneurship Research Card -->
-                <div class="research-card">
-                    <h3 class="research-category">Entrepreneurship & Trade</h3>
-                    
-                    <div class="research-item">
-                        <h4 class="research-title">Chinese import competition and firm welfare (markups and productivity)</h4>
-                        <p class="research-desc">Research examining the impact of Chinese import competition on firm markups and productivity metrics.</p>
-                        <div class="project-links">
-                            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4813591" class="btn btn-outline">Read Paper</a>
-                        </div>
+            <div class="research-tabs">
+                <button class="tab-btn active" data-tab="entrepreneurship">Entrepreneurship</button>
+                <button class="tab-btn" data-tab="ai-causal">AI & Causal Inference</button>
+                <button class="tab-btn" data-tab="behavioral">Economic Psychology</button>
+            </div>
+            
+            <!-- Entrepreneurship Research -->
+            <div class="tab-content active" id="entrepreneurship-tab">
+                <div class="research-grid">
+                    <div class="research-card">
+                        <!--<span class="research-category-tag">Behavioral Economics</span> -->
+                        <h3 class="research-title">Import competition and firm-level markups</h3>
+                        <p class="research-desc">We study how Chinese import competition in steel industry impacts firm welfare measures (their markups and productivity).</p>
+                        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4813591" class="btn btn-outline">Read Paper</a>
                     </div>
                     
-                    <div class="research-item">
-                        <h4 class="research-title">European deep integration and firm welfare</h4>
-                        <p class="research-desc">Analysis of how European economic integration affects firm performance and welfare metrics.</p>
-                        <div class="project-links">
-                            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4811878" class="btn btn-outline">Read Paper</a>
-                        </div>
+                    <div class="research-card">
+                        <!--<span class="research-category-tag">Behavioral Economics</span> -->
+                        <h3 class="research-title">European deep integration and firm welfare</h3>
+                        <p class="research-desc">The paper investigates how European economic integration affected firm welfare measures (firm-level markups and productivity) in member countries.</p>
+                        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4811878" class="btn btn-outline">Read Paper</a>
                     </div>
                 </div>
-                
-                <!-- AI & Causal Inference Research Card -->
-                <div class="research-card">
-                    <h3 class="research-category">AI & Causal Inference</h3>
-                    
-                    <div class="research-item">
-                        <h4 class="research-title">Causal Inference with Machine Learning</h4>
-                        <p class="research-desc">Combining machine learning with causal inference methods for more robust economic analysis.</p>
-                        <div class="project-links">
-                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=BpmeH88AAAAJ&citation_for_view=BpmeH88AAAAJ:bFI3QPDXJZMC" class="btn btn-outline">Read Paper</a>
-                        </div>
+            </div>
+            
+            <!-- AI & Causal Inference Research -->
+            <div class="tab-content" id="ai-causal-tab">
+                <div class="research-grid">
+                    <div class="research-card">
+                        <!--<span class="research-category-tag">Behavioral Economics</span> -->
+                        <h3 class="research-title">Do negative emotions predict voting in Germany?</h3>
+                        <p class="research-desc">We study the impact of negative emotions on German citizen's propensity to vote to far-right parties.</p>
+                        <a href="https://link.springer.com/article/10.1007/s00148-024-01032-9" class="btn btn-outline">Read Paper</a>
                     </div>
                     
-                    <div class="research-item">
-                        <h4 class="research-title">AI Applications in Economic Analysis</h4>
-                        <p class="research-desc">Exploring how artificial intelligence can enhance traditional economic modeling approaches.</p>
-                        <div class="project-links">
-                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=BpmeH88AAAAJ&citation_for_view=BpmeH88AAAAJ:LkGwnXOMwfcC" class="btn btn-outline">Read Paper</a>
-                        </div>
+                    <div class="research-card">
+                        <!--<span class="research-category-tag">Behavioral Economics</span> -->
+                        <h3 class="research-title">Violence in schools and education outcomes in Brazil</h3>
+                        <p class="research-desc">This paper studies whether schools in violent neighborhood report particularly lower academic outcomes than their counterparts.</p>
+                        <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/rode.12342" class="btn btn-outline">Read Paper</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Behavioral Economics Research -->
+            <div class="tab-content" id="behavioral-tab">
+                <div class="research-grid">
+                    <div class="research-card">
+                        <!--<span class="research-category-tag">Behavioral Economics</span> -->
+                        <h3 class="research-title">Prospect Theory and Risk Preferences</h3>
+                        <p class="research-desc">This paper examines how prospect theory helps to understand the role of risk appetite in explaining stock market participation.</p>
+                        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5015365" class="btn btn-outline">Read Paper</a>
+                    </div>
+                    
+                    <div class="research-card">
+                        <!--<span class="research-category-tag">Behavioral Economics</span> -->
+                        <h3 class="research-title">Home Office and Employee Performance in the UK</h3>
+                        <p class="research-desc">We analyse whether COVID-19-induced home office induced productivity increases among UK employees.</p>
+                        <a href="#" class="btn btn-outline">Read Paper</a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
     <!-- Blogs Section -->
     <section class="section" id="blogs">
@@ -1195,39 +1394,79 @@
             <h2 class="section-title">Latest Blogs</h2>
             <p class="section-subtitle">Insights on AI, LLMs, and financial analytics</p>
             
-            <div class="blogs-grid">
-                <div class="blog-card">
-                    <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='350' height='180' viewBox='0 0 350 180'%3E%3Crect fill='%23f3f4f6' width='350' height='180'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3EAI Bias%3C/text%3E%3C/svg%3E" alt="AI Bias" class="blog-img">
-                    <div class="blog-content">
-                        <h3 class="blog-title">We All Know AI Can Be Biased. Nobody Shows You How to Fix It.</h3>
-                        <p class="blog-desc">Practical approaches to identifying and mitigating bias in AI systems.</p>
-                        <div class="project-links">
+            <div class="blog-tabs">
+                <button class="tab-btn active" data-tab="genai">GenAI & LLM</button>
+                <button class="tab-btn" data-tab="ai-engineering">AI & Data Engineering</button>
+            </div>
+            
+            <!-- GenAI & LLM Blogs -->
+            <div class="tab-content active" id="genai-tab">
+                <div class="blogs-grid">
+                    <div class="blog-card">
+                        <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='350' height='180' viewBox='0 0 350 180'%3E%3Crect fill='%23f3f4f6' width='350' height='180'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3EAI Bias%3C/text%3E%3C/svg%3E" alt="AI Bias" class="blog-img">
+                        <div class="blog-content">
+                            <!--<span class="blog-category">AI & Data Engineering</span> -->
+                            <h3 class="blog-title">We All Know AI Can Be Biased. Nobody Shows You How to Fix It.</h3>
+                            <p class="blog-desc">Practical approaches to identifying and mitigating bias in AI systems.</p>
                             <a href="https://medium.com/@sumitdeole/we-all-know-ai-can-be-biased-nobody-shows-you-how-to-fix-it-c5c23f72f95c" class="btn btn-outline">Read Article</a>
                         </div>
                     </div>
-                </div>
-                
-                <div class="blog-card">
-                    <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='350' height='180' viewBox='0 0 350 180'%3E%3Crect fill='%23f3f4f6' width='350' height='180'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3ELLMs%3C/text%3E%3C/svg%3E" alt="LLMs" class="blog-img">
-                    <div class="blog-content">
-                        <h3 class="blog-title">The Dual Promise of LLMs: Mistral for Fraud Detection & Risk Reporting</h3>
-                        <p class="blog-desc">Exploring how large language models can transform fraud detection and financial risk analysis.</p>
-                        <div class="project-links">
+                    
+                    <div class="blog-card">
+                        <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='350' height='180' viewBox='0 0 350 180'%3E%3Crect fill='%23f3f4f6' width='350' height='180'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3ELLMs%3C/text%3E%3C/svg%3E" alt="LLMs" class="blog-img">
+                        <div class="blog-content">
+                            <!--<span class="blog-category">AI & Data Engineering</span> -->
+                            <h3 class="blog-title">The Dual Promise of LLMs: Mistral for Fraud Detection & Risk Reporting</h3>
+                            <p class="blog-desc">Exploring how large language models can transform fraud detection and financial risk analysis.</p>
                             <a href="https://medium.com/@sumitdeole/the-dual-promise-of-llms-fraud-detection-and-economic-analysis-in-financial-services-a0ced58e690c" class="btn btn-outline">Read Article</a>
                         </div>
                     </div>
-                </div>
-                
-                <!--<div class="blog-card">
-                    <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='350' height='180' viewBox='0 0 350 180'%3E%3Crect fill='%23f3f4f6' width='350' height='180'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3EAB Testing%3C/text%3E%3C/svg%3E" alt="A/B Testing" class="blog-img">
-                    <div class="blog-content">
-                        <h3 class="blog-title">LLM That Actually Understands Your A/B Tests (And Writes Better Reports)</h3>
-                        <p class="blog-desc">How LLMs can revolutionize A/B testing analysis and reporting processes.</p>
-                        <div class="project-links">
+                    
+                    <div class="blog-card">
+                        <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='350' height='180' viewBox='0 0 350 180'%3E%3Crect fill='%23f3f4f6' width='350' height='180'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3EAB Testing%3C/text%3E%3C/svg%3E" alt="A/B Testing" class="blog-img">
+                        <div class="blog-content">
+                            <!--<span class="blog-category">AI & Data Engineering</span> -->
+                            <h3 class="blog-title">LLM That Actually Understands Your A/B Tests (And Writes Better Reports)</h3>
+                            <p class="blog-desc">How LLMs can revolutionize A/B testing analysis and reporting processes.</p>
                             <a href="https://medium.com/@sumitdeole/llm-that-actually-understands-your-a-b-tests-and-writes-better-reports-than-your-analysts-2754d67e377f" class="btn btn-outline">Read Article</a>
                         </div>
                     </div>
-                </div> -->
+                </div>
+            </div>
+            
+            <!-- AI & Data Engineering Blogs -->
+            <div class="tab-content" id="ai-engineering-tab">
+                <div class="blogs-grid">
+                    <div class="blog-card">
+                        <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='350' height='180' viewBox='0 0 350 180'%3E%3Crect fill='%23f3f4f6' width='350' height='180'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3EData Engineering%3C/text%3E%3C/svg%3E" alt="Data Engineering" class="blog-img">
+                        <div class="blog-content">
+                            <!--<span class="blog-category">AI & Data Engineering</span> -->
+                            <h3 class="blog-title">Building Scalable Data Pipelines for Machine Learning</h3>
+                            <p class="blog-desc">Best practices for creating robust data pipelines that support ML workflows.</p>
+                            <a href="https://medium.com/@sumitdeole" class="btn btn-outline">Read Article</a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-card">
+                        <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='350' height='180' viewBox='0 0 350 180'%3E%3Crect fill='%23f3f4f6' width='350' height='180'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3EMLOps%3C/text%3E%3C/svg%3E" alt="MLOps" class="blog-img">
+                        <div class="blog-content">
+                            <!--<span class="blog-category">AI & Data Engineering</span> -->
+                            <h3 class="blog-title">MLOps: Bridging the Gap Between Data Science and Production</h3>
+                            <p class="blog-desc">Essential MLOps practices for deploying and maintaining AI systems.</p>
+                            <a href="https://medium.com/@sumitdeole" class="btn btn-outline">Read Article</a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-card">
+                        <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='350' height='180' viewBox='0 0 350 180'%3E%3Crect fill='%23f3f4f6' width='350' height='180'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3EAI Infrastructure%3C/text%3E%3C/svg%3E" alt="AI Infrastructure" class="blog-img">
+                        <div class="blog-content">
+                            <!--<span class="blog-category">AI & Data Engineering</span> -->
+                            <h3 class="blog-title">Designing AI Infrastructure for Financial Services</h3>
+                            <p class="blog-desc">Architecting scalable AI systems for fraud detection and risk management.</p>
+                            <a href="https://medium.com/@sumitdeole" class="btn btn-outline">Read Article</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1246,7 +1485,7 @@
                         </div>
                         <div>
                             <h3>Email</h3>
-                            <p>sumit.deole@example.com</p>
+                            <p>sumit.deole@gmail.com</p>
                         </div>
                     </div>
                     
@@ -1339,9 +1578,9 @@
                     <h3 class="footer-heading">Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
                         <li><a href="#experience">Experience</a></li>
-                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#projects">AML</a></li>
+                        <li><a href="#WDprojects">WebDev</a></li>
                         <li><a href="#research">Research</a></li>
                         <li><a href="#blogs">Blogs</a></li>
                         <li><a href="#contact">Contact</a></li>
@@ -1393,6 +1632,26 @@
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             header.classList.toggle('scrolled', window.scrollY > 100);
+        });
+                // Tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons and contents
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+                    
+                    // Show corresponding content
+                    const tabId = btn.getAttribute('data-tab');
+                    document.getElementById(`${tabId}-tab`).classList.add('active');
+                });
+            });
         });
     </script>
 </body>

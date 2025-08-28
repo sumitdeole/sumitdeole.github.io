@@ -466,7 +466,7 @@
             padding: 12px 24px;
             background: none;
             border: none;
-            font-size: 1.1rem;
+            font-size: 1.4rem;
             font-weight: 600;
             color: var(--text-light);
             cursor: pointer;
@@ -560,6 +560,7 @@
             flex-wrap: wrap;
             gap: 8px;
             margin-bottom: 15px;
+            justify-content: center;
         }
         
         .project-tag {
@@ -647,7 +648,7 @@
             padding: 12px 24px;
             background: none;
             border: none;
-            font-size: 1.1rem;
+            font-size: 1.4rem;
             font-weight: 600;
             color: var(--text-light);
             cursor: pointer;
@@ -741,7 +742,7 @@
             padding: 12px 24px;
             background: none;
             border: none;
-            font-size: 1.1rem;
+            font-size: 1.4rem;
             font-weight: 600;
             color: var(--text-light);
             cursor: pointer;
@@ -1271,7 +1272,7 @@
                             <div class="project-tags">
                                 <span class="project-tag">GenAI/LLM</span>
                                 <span class="project-tag">AI & ML</span>
-                                <span class="project-tag">Python</span>
+                                <span class="project-tag">Automated Reporting</span>
                             </div>
                             <div class="project-links">
                                 <a href="https://github.com/sumitdeole/LLM_numerical_data" class="btn btn-outline">Project 1</a>
@@ -1325,7 +1326,7 @@
                         <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect fill='%23f3f4f6' width='300' height='200'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='23' x='50%25' y='50%25' text-anchor='middle'%3ELearn English%3C/text%3E%3C/svg%3E" alt="EnglishVision" class="project-img">
                         <div class="project-content">
                             <h3 class="project-title">Education Platform</h3>
-                            <p class="project-desc">Modern educational platform design for language learning with interactive features.</p>
+                            <p class="project-desc">Modern platform design for language learning with interactive features.</p>
                             <div class="project-tags">
                                 <span class="project-tag">Web Design</span>
                                 <span class="project-tag">UI/UX</span>
@@ -1340,7 +1341,7 @@
                     <div class="project-card">
                         <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect fill='%23f3f4f6' width='400' height='300'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='23' x='50%25' y='50%25' text-anchor='middle'%3EPresentation Template%3C/text%3E%3C/svg%3E" alt="Presentation Template" class="project-img">
                         <div class="project-content">
-                            <h3 class="project-title">Presentation Template</h3>
+                            <h3 class="project-title">Readymade HTML PPT Slides</h3>
                             <p class="project-desc">HTML based template for creating professional presentations.</p>
                             <div class="project-tags">
                                 <span class="project-tag">UI/UX</span>
@@ -1447,6 +1448,8 @@
             <div class="blog-tabs">
                 <button class="blog-tab-btn active" data-tab="genai">GenAI & LLM</button>
                 <button class="blog-tab-btn" data-tab="ai-engineering">AI & Data Engineering</button>
+                <button class="blog-tab-btn" data-tab="automated-reporting">Automated Reporting</button>
+
             </div>
             
             <!-- GenAI & LLM Blogs -->
@@ -1457,7 +1460,14 @@
                         <div class="blog-content">
                             <h3 class="blog-title">Unearthing the Potential of Large Language Models (LLMs)</h3>
                             <p class="blog-desc">Using LangChain and Llama.cpp libraries, I implement an agent that answers any question on Statistics.</p>
-                            <a href="https://medium.com/@sumitdeole/unearthing-the-potential-of-large-language-models-llms-32a7d70a9f0c" class="btn btn-outline">Read Here</a>
+                        </div>
+                        <div class="project-tags">
+                                <span class="project-tag">GenAI/LLM</span>
+                                <span class="project-tag">LangChain</span>
+                                <span class="project-tag">Llama</span>
+                        </div>
+                        <div class="project-links">
+                                <a href="https://medium.com/@sumitdeole/unearthing-the-potential-of-large-language-models-llms-32a7d70a9f0c" class="btn btn-outline">Read Here</a>
                         </div>
                     </div>
                     
@@ -1466,16 +1476,14 @@
                         <div class="blog-content">
                             <h3 class="blog-title">A Dual Promise: LLMs for Fraud Detection & Risk Reporting</h3>
                             <p class="blog-desc">Exploring how large language models can transform fraud detection and financial risk analysis.</p>
-                            <a href="https://medium.com/@sumitdeole/the-dual-promise-of-llms-fraud-detection-and-economic-analysis-in-financial-services-a0ced58e690c" class="btn btn-outline">Read Here</a>
                         </div>
-                    </div>
-                    
-                    <div class="blog-card">
-                        <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='350' height='180' viewBox='0 0 350 180'%3E%3Crect fill='%23f3f4f6' width='350' height='180'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='23' x='50%25' y='50%25' text-anchor='middle'%3EAB Testing%3C/text%3E%3C/svg%3E" alt="A/B Testing" class="blog-img">
-                        <div class="blog-content">
-                            <h3 class="blog-title">LLM That Actually Understands Your A/B Tests (And Writes Better Reports)</h3>
-                            <p class="blog-desc">How LLMs can revolutionize A/B testing analysis and reporting processes.</p>
-                            <a href="https://medium.com/@sumitdeole/llm-that-actually-understands-your-a-b-tests-and-writes-better-reports-than-your-analysts-2754d67e377f" class="btn btn-outline">Read Here</a>
+                        <div class="project-tags">
+                                <span class="project-tag">GenAI/LLM</span>
+                                <span class="project-tag">Fraud Detection</span>
+                                <span class="project-tag">AML</span>
+                        </div>
+                        <div class="project-links">
+                                <a href="https://medium.com/@sumitdeole/the-dual-promise-of-llms-fraud-detection-and-economic-analysis-in-financial-services-a0ced58e690c" class="btn btn-outline">Read Here</a>
                         </div>
                     </div>
                 </div>
@@ -1489,28 +1497,73 @@
                         <div class="blog-content">
                             <h3 class="blog-title">We All Know AI Can Be Biased. Nobody Shows You How to Fix It.</h3>
                             <p class="blog-desc">Practical approaches to identifying and mitigating bias in AI systems.</p>
-                            <a href="https://medium.com/@sumitdeole/we-all-know-ai-can-be-biased-nobody-shows-you-how-to-fix-it-c5c23f72f95c" class="btn btn-outline">Read Here</a>
+                        </div>
+                        <div class="project-tags">
+                                <span class="project-tag">AI Bias</span>
+                                <span class="project-tag">Fair Prediction</span>
+                                <span class="project-tag">Bias Mitigation</span>
+                        </div>
+                        <div class="project-links">
+                                <a href="https://medium.com/@sumitdeole/we-all-know-ai-can-be-biased-nobody-shows-you-how-to-fix-it-c5c23f72f95c" class="btn btn-outline">Read Here</a>
                         </div>
                     </div>
+
                     <div class="blog-card">
                         <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='350' height='180' viewBox='0 0 350 180'%3E%3Crect fill='%23f3f4f6' width='350' height='180'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='23' x='50%25' y='50%25' text-anchor='middle'%3EData Engineering%3C/text%3E%3C/svg%3E" alt="Data Engineering" class="blog-img">
                         <div class="blog-content">
                             <h3 class="blog-title">Seeing through the Data Engineering project</h3>
                             <p class="blog-desc">Best practices for creating robust data pipelines that support ML workflows in the logistics and ecommerce sectors.</p>
-                            <a href="https://towardsdev.com/seeing-through-the-data-engineering-project-edf9984448a8" class="btn btn-outline">Read Here</a>
                         </div>
-                    </div>
-                    
-                    <div class="blog-card">
-                        <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='350' height='180' viewBox='0 0 350 180'%3E%3Crect fill='%23f3f4f6' width='350' height='180'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='23' x='50%25' y='50%25' text-anchor='middle'%3EAB Testing%3C/text%3E%3C/svg%3E" alt="A/B Testing" class="blog-img">
-                        <div class="blog-content">
-                            <h3 class="blog-title">LLM That Actually Understands Your A/B Tests (And Writes Better Reports)</h3>
-                            <p class="blog-desc">How LLMs can revolutionize A/B testing analysis and reporting processes.</p>
-                            <a href="https://medium.com/@sumitdeole/llm-that-actually-understands-your-a-b-tests-and-writes-better-reports-than-your-analysts-2754d67e377f" class="btn btn-outline">Read Here</a>
+                        <div class="project-tags">
+                                <span class="project-tag">Data Engineering</span>
+                                <span class="project-tag">Robust Data Pipelines</span>
+                                <span class="project-tag">ML Workflows</span>
+                        </div>
+                        <div class="project-links">
+                                <a href="https://towardsdev.com/seeing-through-the-data-engineering-project-edf9984448a8" class="btn btn-outline">Read Here</a>
                         </div>
                     </div>
                 </div>
             </div>
+
+        <!-- Automated Reporting Blogs -->
+        <div class="blog-tab-content" id="automated-reporting-tab">
+            <div class="blogs-grid">
+                <div class="blog-card">
+                    <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='350' height='180' viewBox='0 0 350 180'%3E%3Crect fill='%23f3f4f6' width='350' height='180'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='23' x='50%25' y='50%25' text-anchor='middle'%3EAB Testing%3C/text%3E%3C/svg%3E" alt="A/B Testing" class="blog-img">
+                    <div class="blog-content">
+                        <h3 class="blog-title">LLM That Actually Understands Your A/B Tests (And Writes Better Reports)</h3>
+                        <p class="blog-desc">How LLMs can revolutionize A/B testing analysis and reporting processes.</p>
+                    </div>
+                    <div class="project-tags">
+                            <span class="project-tag">GenAI/LLM</span>
+                            <span class="project-tag">AB Testing</span>
+                            <span class="project-tag">Automated Reporting</span>
+                    </div>
+                    <div class="project-links">
+                            <a href="https://medium.com/@sumitdeole/llm-that-actually-understands-your-a-b-tests-and-writes-better-reports-than-your-analysts-2754d67e377f" class="btn btn-outline">Read Here</a>
+                    </div>                    
+                </div>
+                
+                    <div class="blog-card">
+                        <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='350' height='180' viewBox='0 0 350 180'%3E%3Crect fill='%23f3f4f6' width='350' height='180'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='23' x='50%25' y='50%25' text-anchor='middle'%3ELLMs%3C/text%3E%3C/svg%3E" alt="LLMs" class="blog-img">
+                        <div class="blog-content">
+                            <h3 class="blog-title">A Dual Promise: LLMs for Fraud Detection & Risk Reporting</h3>
+                            <p class="blog-desc">Exploring how large language models can transform fraud detection and financial risk analysis.</p>
+                            <a href="https://medium.com/@sumitdeole/the-dual-promise-of-llms-fraud-detection-and-economic-analysis-in-financial-services-a0ced58e690c" class="btn btn-outline">Read Here</a>
+                        </div>
+                    <div class="project-tags">
+                            <span class="project-tag">GenAI/LLM</span>
+                            <span class="project-tag">Fraud Detection</span>
+                            <span class="project-tag">Risk Reporting</span>
+                    </div>
+                    <div class="project-links">
+                            <a href="https://medium.com/@sumitdeole/the-dual-promise-of-llms-fraud-detection-and-economic-analysis-in-financial-services-a0ced58e690c" class="btn btn-outline">Read Here</a>
+                    </div>                                            
+                    </div>
+
+            </div>
+        </div>
         </div>
 
     <!-- Contact Section -->

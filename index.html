@@ -905,42 +905,36 @@
             }
         }
 
-        /* Contact Section */
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background-color: var(--light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            font-size: 1.2rem;
-        }
-        
-        .contact-form {
+        /* Contact Form */
+        .contact-form-container {
             background-color: var(--white);
-            padding: 30px;
-            border-radius: 10px;
+            padding: 40px;
+            border-radius: 12px;
             box-shadow: var(--shadow);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .form-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .form-title {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .form-subtitle {
+            color: var(--text-light);
+            margin-bottom: 20px;
         }
         
         .form-group {
@@ -956,9 +950,9 @@
         
         .form-control {
             width: 100%;
-            padding: 12px 15px;
+            padding: 14px 16px;
             border: 1px solid #ddd;
-            border-radius: 6px;
+            border-radius: 8px;
             font-family: 'Inter', sans-serif;
             font-size: 1rem;
             transition: var(--transition);
@@ -973,6 +967,58 @@
         textarea.form-control {
             min-height: 150px;
             resize: vertical;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 8px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            text-decoration: none;
+            font-size: 1rem;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        .form-footer {
+            text-align: center;
+            margin-top: 20px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .form-footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .form-footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-form-container {
+                padding: 30px 20px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .form-title {
+                font-size: 1.5rem;
+            }
         }
         
         /* Footer */
@@ -1162,7 +1208,7 @@
                 <a href="https://medium.com/@sumitdeole" class="social-icon">
                     <i class="fab fa-medium-m"></i>
                 </a>
-                <a href="mailto:sumit.deole@gmail.com" class="social-icon">
+                <a href="#contact" class="social-icon">  <!-- Changed to contact section link -->
                     <i class="fas fa-envelope"></i>
                 </a>
             </div>
@@ -1342,7 +1388,7 @@
 <svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'>
   <rect fill='%23f3f4f6' width='300' height='200'/>
   <text fill='%232563eb' font-family='Arial' font-size='27' x='50%' y='50%' text-anchor='middle' alignment-baseline='middle'>Learn English</text>
-</svg>" alt="EnglishVision" class="project-img">
+</svg>" alt="LearnEnglish" class="project-img">
                         <div class="project-content">
                             <h3 class="project-title">Education Platform</h3>
                             <p class="project-desc">Modern educational platform design for language learning with interactive features.</p>
@@ -1718,132 +1764,102 @@
             <h2 class="section-title">Get In Touch</h2>
             <p class="section-subtitle">I'm interested in advisory roles and opportunities in fraud detection and AML</p>
             
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h3>Email</h3>
-                            <p>sumit.deole@gmail.com</p>
-                        </div>
+            <div class="contact-form-container">
+                <div class="form-header">
+                    <div class="form-icon">
+                        <i class="fas fa-paper-plane"></i>
                     </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <h3>Location</h3>
-                            <p>Based in Germany, open to remote opportunities</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-briefcase"></i>
-                        </div>
-                        <div>
-                            <h3>Availability</h3>
-                            <p>Available for consulting projects and advisory roles</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <div>
-                            <h3>Connect</h3>
-                            <div class="social-links">
-                                <a href="https://linkedin.com/in/sumitdeole" class="social-link">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a href="https://github.com/sumitdeole" class="social-link">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="https://medium.com/@sumitdeole" class="social-link">
-                                    <i class="fab fa-medium-m"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    <h3 class="form-title">Send me a message</h3>
+                    <p class="form-subtitle">I'll get back to you as soon as possible</p>
                 </div>
                 
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name" class="form-label">Your Name</label>
-                            <input type="text" id="name" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email" class="form-label">Your Email</label>
-                            <input type="email" id="email" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="subject" class="form-label">Subject</label>
-                            <input type="text" id="subject" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea id="message" class="form-control" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
+                <!-- FormSubmit.co form - Replace YOUR_EMAIL with your actual email -->
+                <form action="https://formsubmit.co/sumit.deole@gmail.com" method="POST">
+                    <!-- FormSubmit optional parameters -->
+                    <input type="hidden" name="_subject" value="New contact form submission from your website">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html"> <!-- Optional thank you page -->
+                    
+                    <div class="form-group">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Your Email</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email address" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" id="subject" name="subject" class="form-control" placeholder="What is this regarding?" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" name="message" class="form-control" placeholder="Type your message here..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+                
+                <div class="form-footer">
+                    <p>Alternatively, connect with me on 
+                        <a href="https://linkedin.com/in/sumitdeole">LinkedIn</a>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <a href="#" class="footer-logo">SumitDeole</a>
-                    <p class="footer-desc">Financial Economist and Data Scientist specializing in Credit Risk Modeling, Fraud Detection, and AML applications.</p>
-                    <div class="social-links">
-                        <a href="https://linkedin.com/in/sumitdeole" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://github.com/sumitdeole" class="social-link"><i class="fab fa-github"></i></a>
-                        <a href="https://medium.com/@sumitdeole" class="social-link"><i class="fab fa-medium-m"></i></a>
-                        <a href="mailto:sumit.deole@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-grid">
+                    <div>
+                        <a href="#" class="footer-logo">SumitDeole</a>
+                        <p class="footer-desc">Financial Economist and Data Scientist specializing in Credit Risk Modeling, Fraud Detection, and AML applications.</p>
+                        <div class="social-links">
+                            <a href="https://linkedin.com/in/sumitdeole" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://github.com/sumitdeole" class="social-link"><i class="fab fa-github"></i></a>
+                            <a href="https://medium.com/@sumitdeole" class="social-link"><i class="fab fa-medium-m"></i></a>
+                            <a href="#contact" class="social-link"><i class="fas fa-envelope"></i></a>  <!-- Changed to contact section link -->
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="footer-heading">Quick Links</h3>
+                        <ul class="footer-links">
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#experience">Experience</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                            <li><a href="#research">Research</a></li>
+                            <li><a href="#blogs">Blogs</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="footer-heading">Expertise</h3>
+                        <ul class="footer-links">
+                            <li><a href="#projects">Credit Risk Modeling</a></li>
+                            <li><a href="#projects">Fraud Detection</a></li>
+                            <li><a href="#projects">AML Solutions</a></li>
+                            <li><a href="#projects">Data Science</a></li>
+                            <li><a href="#research">Financial Economics</a></li>
+                        </ul>
                     </div>
                 </div>
                 
-                <div>
-                    <h3 class="footer-heading">Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#experience">Experience</a></li>
-                        <li><a href="#projects">AML & WebDev</a></li>
-                        <li><a href="#research">Research</a></li>
-                        <li><a href="#blogs">Blogs</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="footer-heading">Expertise</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Credit Risk Modeling</a></li>
-                        <li><a href="#">Fraud Detection</a></li>
-                        <li><a href="#">AML Solutions</a></li>
-                        <li><a href="#">Data Science</a></li>
-                        <li><a href="#">Financial Economics</a></li>
-                    </ul>
+                <div class="copyright">
+                    <p>&copy; 2025 Dr. Sumit Deole. All rights reserved.</p>
                 </div>
             </div>
-            
-            <div class="copyright">
-                <p>&copy; 2025 Dr. Sumit Deole. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+        </footer>
 
     <script>
         // Mobile Navigation
@@ -1920,6 +1936,21 @@
                     const tabId = btn.getAttribute('data-tab');
                     document.getElementById(`${tabId}-tab`).classList.add('active');
                 });
+            });
+        });
+        // Simple form validation and success message
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form');
+            
+            form.addEventListener('submit', function(e) {
+                // Basic validation is handled by HTML5 required attribute
+                // You can add custom validation here if needed
+                
+                // Show a success message (FormSubmit will handle the actual submission)
+                setTimeout(function() {
+                    alert('Thank you for your message! I will get back to you soon.');
+                    form.reset();
+                }, 500);
             });
         });
 </script>

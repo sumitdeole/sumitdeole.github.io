@@ -453,11 +453,56 @@
         .experience-content li {
             margin-bottom: 8px;
         }
+
+        /* Project Tabs */
+        .project-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--light);
+            padding-bottom: 10px;
+        }
         
-        /* Projects Section */
+        .project-tab-btn {
+            padding: 12px 24px;
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            margin: 0 10px;
+        }
+        
+        .project-tab-btn:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .project-tab-btn.active {
+            color: var(--primary);
+        }
+        
+        .project-tab-btn.active:after {
+            width: 100%;
+        }
+        
+        .project-tab-btn:hover {
+            color: var(--primary);
+        }
+
+        /* Projects Grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
         
@@ -467,6 +512,9 @@
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
         
         .project-card:hover {
@@ -483,12 +531,15 @@
         .project-links {
             display: flex;
             justify-content: center;
-            gap: 1rem; /* space between Project 1 & 2 */
+            gap: 1rem;
             margin-top: 1rem;
-            }
+        }
 
         .project-content {
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
         
         .project-title {
@@ -502,6 +553,7 @@
             color: var(--text-light);
             margin-bottom: 15px;
             font-size: 0.95rem;
+            flex-grow: 1;
         }
         
         .project-tags {
@@ -519,7 +571,69 @@
             color: var(--text);
         }
         
-        /* Research Section */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 6px;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        /* Tab content */
+        .project-tab-content {
+            display: none;
+        }
+        
+        .project-tab-content.active {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .project-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .project-tab-btn {
+                margin: 5px 0;
+                width: 200px;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-links {
+                flex-direction: column;
+            }
+        }
+        
+
         /* Research Tabs */
         .research-tabs {
             display: flex;
@@ -530,7 +644,7 @@
             flex-wrap: wrap;
         }
         
-        .tab-btn {
+        .research-tab-btn {
             padding: 12px 24px;
             background: none;
             border: none;
@@ -543,7 +657,7 @@
             margin: 0 10px;
         }
         
-        .tab-btn:after {
+        .research-tab-btn:after {
             content: '';
             position: absolute;
             bottom: -12px;
@@ -554,15 +668,15 @@
             transition: var(--transition);
         }
         
-        .tab-btn.active {
+        .research-tab-btn.active {
             color: var(--primary);
         }
         
-        .tab-btn.active:after {
+        .research-tab-btn.active:after {
             width: 100%;
         }
         
-        .tab-btn:hover {
+        .research-tab-btn:hover {
             color: var(--primary);
         }
         
@@ -615,80 +729,7 @@
             flex-grow: 1;
         }
         
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: var(--primary);
-            color: var(--white);
-            border-radius: 6px;
-            font-weight: 500;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            box-shadow: var(--shadow);
-            text-decoration: none;
-            font-size: 0.9rem;
-            text-align: center;
-        }
-        
-        .btn:hover {
-            background-color: var(--primary-dark);
-            color: var(--white);
-            transform: translateY(-2px);
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-        
-        .btn-outline:hover {
-            background-color: var(--primary);
-            color: var(--white);
-        }
-        
-        /* Tab content */
-        .tab-content {
-            display: none;
-        }
-        
-        .tab-content.active {
-            display: block;
-        }
-        
-        @media (max-width: 768px) {
-            .research-tabs {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .tab-btn {
-                margin: 5px 0;
-                width: 200px;
-            }
-            
-            .research-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .research-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .project-links {
-                flex-direction: column;
-            }
-            
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
-        }
-
-                /* Blog Tabs */
+        /* Blog Tabs */
         .blog-tabs {
             display: flex;
             justify-content: center;
@@ -697,7 +738,7 @@
             padding-bottom: 10px;
         }
         
-        .tab-btn {
+        .blog-tab-btn {
             padding: 12px 24px;
             background: none;
             border: none;
@@ -710,7 +751,7 @@
             margin: 0 10px;
         }
         
-        .tab-btn:after {
+        .blog-tab-btn:after {
             content: '';
             position: absolute;
             bottom: -12px;
@@ -721,15 +762,15 @@
             transition: var(--transition);
         }
         
-        .tab-btn.active {
+        .blog-tab-btn.active {
             color: var(--primary);
         }
         
-        .tab-btn.active:after {
+        .blog-tab-btn.active:after {
             width: 100%;
         }
         
-        .tab-btn:hover {
+        .blog-tab-btn:hover {
             color: var(--primary);
         }
 
@@ -828,27 +869,35 @@
             color: var(--white);
         }
         
-        /* Blog tab content */
-        .tab-content {
+        /* Tab content */
+        .research-tab-content {
             display: none;
         }
         
-        .tab-content.active {
+        .research-tab-content.active {
+            display: block;
+        }
+        
+        .blog-tab-content {
+            display: none;
+        }
+        
+        .blog-tab-content.active {
             display: block;
         }
         
         @media (max-width: 768px) {
-            .blog-tabs {
+            .research-tabs, .blog-tabs {
                 flex-direction: column;
                 align-items: center;
             }
             
-            .tab-btn {
+            .research-tab-btn, .blog-tab-btn {
                 margin: 5px 0;
                 width: 200px;
             }
             
-            .blogs-grid {
+            .research-grid, .blogs-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -1083,6 +1132,7 @@
             }
         }
     </style>
+
 </head>
 <body>
     <!-- Header & Navigation -->
@@ -1093,8 +1143,7 @@
             <ul class="nav-menu" id="nav-menu">
                 <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
-                <li class="nav-item"><a href="#projects" class="nav-link">AML</a></li>
-                <li class="nav-item"><a href="#WDprojects" class="nav-link">WebDev</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">AML & WebDev</a></li>
                 <li class="nav-item"><a href="#research" class="nav-link">Research</a></li>
                 <li class="nav-item"><a href="#blogs" class="nav-link">Blogs</a></li>
                 <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
@@ -1203,117 +1252,121 @@
     <!-- Projects Section -->
     <section class="section" id="projects">
         <div class="container">
-            <h2 class="section-title">AML Projects</h2>
-            <p class="section-subtitle">A selection of my work in financial analytics</p>
-            <div class="projects-grid">
+            <h2 class="section-title">Projects</h2>
+            <p class="section-subtitle">A selection of my work in financial analytics and web development</p>
             
-                <!-- Card 1 -->
-                <div class="project-card">
-                    <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect fill='%23f3f4f6' width='300' height='200'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3ELLM Projects%3C/text%3E%3C/svg%3E" alt="LLM Projects" class="project-img">
-                    <div class="project-content">
-                        <h3 class="project-title">GenAI for AML & Fraud Detection</h3>
-                        <p class="project-desc">Leveraging large language models for prediction and automated reporting in financial security.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">GenAI/LLM</span>
-                            <span class="project-tag">AI & ML</span>
-                            <span class="project-tag">Python</span>
+            <div class="project-tabs">
+                <button class="project-tab-btn active" data-tab="aml">AML Projects</button>
+                <button class="project-tab-btn" data-tab="webdev">WebDev Projects</button>
+            </div>
+            
+            <!-- AML Projects -->
+            <div class="project-tab-content active" id="aml-tab">
+                <div class="projects-grid">
+                    <!-- Card 1 -->
+                    <div class="project-card">
+                        <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect fill='%23f3f4f6' width='300' height='200'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3ELLM Projects%3C/text%3E%3C/svg%3E" alt="LLM Projects" class="project-img">
+                        <div class="project-content">
+                            <h3 class="project-title">GenAI for AML & Fraud Detection</h3>
+                            <p class="project-desc">Leveraging large language models for prediction and automated reporting in financial security.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">GenAI/LLM</span>
+                                <span class="project-tag">AI & ML</span>
+                                <span class="project-tag">Python</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/sumitdeole/LLM_numerical_data" class="btn btn-outline">Project 1</a>
+                                <a href="https://github.com/sumitdeole/LLM_text_data" class="btn btn-outline">Project 2</a>
+                            </div>
                         </div>
-                    <div class="project-links">
-                        <a href="https://github.com/sumitdeole/LLM_numerical_data" class="btn btn-outline">Project 1</a>
-                        <a href="https://github.com/sumitdeole/LLM_text_data" class="btn btn-outline">Project 2</a>
                     </div>
-                </div>
-                </div>
 
-                <!-- Card 2 -->
-                <div class="project-card">
-                    <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect fill='%23f3f4f6' width='300' height='200'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3EFraud Detection%3C/text%3E%3C/svg%3E" alt="Fraud Detection" class="project-img">
-                    <div class="project-content">
-                        <h3 class="project-title">AI for AML & Fraud Detection</h3>
-                        <p class="project-desc">Advanced anomaly detection system for identifying fraudulent transactions and money laundering activities.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">AI & ML</span>
-                            <span class="project-tag">Anomaly Detection</span>
-                            <span class="project-tag">Python</span>
-                        </div>
-                        <div class="project-links">
-                        <a href="https://github.com/sumitdeole/AML_anomaly_detection" class="btn btn-outline">Project 1</a>
-                        <a href="https://github.com/sumitdeole/aml_dashboard" class="btn btn-outline">Project 2</a>
+                    <!-- Card 2 -->
+                    <div class="project-card">
+                        <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect fill='%23f3f4f6' width='300' height='200'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3EFraud Detection%3C/text%3E%3C/svg%3E" alt="Fraud Detection" class="project-img">
+                        <div class="project-content">
+                            <h3 class="project-title">AI for AML & Fraud Detection</h3>
+                            <p class="project-desc">Advanced anomaly detection system for identifying fraudulent transactions and money laundering activities.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">AI & ML</span>
+                                <span class="project-tag">Anomaly Detection</span>
+                                <span class="project-tag">Python</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/sumitdeole/AML_anomaly_detection" class="btn btn-outline">Project 1</a>
+                                <a href="https://github.com/sumitdeole/aml_dashboard" class="btn btn-outline">Project 2</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Card 3 -->
-                <div class="project-card">
-                    <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect fill='%23f3f4f6' width='300' height='200'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3ECredit Risk%3C/text%3E%3C/svg%3E" alt="Credit Risk Rating" class="project-img">
-                    <div class="project-content">
-                        <h3 class="project-title">Customer Credit Risk Scoring</h3>
-                        <p class="project-desc">ML-based credit risk assessment system with improved risk prediction accuracy and credit scoring.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">AL & ML</span>
-                            <span class="project-tag">Risk Assessment</span>
-                            <span class="project-tag">Python</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/sumitdeole/Fraud_risk_scoring" class="btn btn-outline">Project 1</a>
-                            <a href="https://github.com/sumitdeole/customer_credit_risk_analysis" class="btn btn-outline">Project 2</a>
+                    
+                    <!-- Card 3 -->
+                    <div class="project-card">
+                        <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect fill='%23f3f4f6' width='300' height='200'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3ECredit Risk%3C/text%3E%3C/svg%3E" alt="Credit Risk Rating" class="project-img">
+                        <div class="project-content">
+                            <h3 class="project-title">Customer Credit Risk Scoring</h3>
+                            <p class="project-desc">ML-based credit risk assessment system with improved risk prediction accuracy and credit scoring.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">AI & ML</span>
+                                <span class="project-tag">Risk Assessment</span>
+                                <span class="project-tag">Python</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/sumitdeole/Fraud_risk_scoring" class="btn btn-outline">Project 1</a>
+                                <a href="https://github.com/sumitdeole/customer_credit_risk_analysis" class="btn btn-outline">Project 2</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-
-    <!-- WebDev Projects Section -->
-    <section class="section" id="WDprojects">
-        <div class="container">
-            <h2 class="section-title">WebDev Projects</h2>
-            <p class="section-subtitle">A selection of my work in web development</p>
-                <div class="projects-grid">            
-                <div class="project-card">
-                    <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect fill='%23f3f4f6' width='300' height='200'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3ELearnEnglish%3C/text%3E%3C/svg%3E" alt="EnglishVision" class="project-img">
-                    <div class="project-content">
-                        <h3 class="project-title">Education Platform</h3>
-                        <p class="project-desc">Modern educational platform design for language learning with interactive features.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Web Design</span>
-                            <span class="project-tag">UI/UX</span>
-                            <span class="project-tag">HTML/CSS/JS</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/sumitdeole/learnenglish" class="btn btn-outline">View Project</a>
+            
+            <!-- WebDev Projects -->
+            <div class="project-tab-content" id="webdev-tab">
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect fill='%23f3f4f6' width='300' height='200'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3ELearnEnglish%3C/text%3E%3C/svg%3E" alt="EnglishVision" class="project-img">
+                        <div class="project-content">
+                            <h3 class="project-title">Education Platform</h3>
+                            <p class="project-desc">Modern educational platform design for language learning with interactive features.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Web Design</span>
+                                <span class="project-tag">UI/UX</span>
+                                <span class="project-tag">HTML/CSS/JS</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/sumitdeole/learnenglish" class="btn btn-outline">View Project</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="project-card">
-                    <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect fill='%23f3f4f6' width='300' height='200'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3EPresentationTemplate%3C/text%3E%3C/svg%3E" alt="EnglishVision" class="project-img">
-                    <div class="project-content">
-                        <h3 class="project-title">Presentation Template</h3>
-                        <p class="project-desc">HTML based template for creating professional presentations.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">UI/UX</span>
-                            <span class="project-tag">Web Design</span>
-                            <span class="project-tag">HTML/CSS/JS</span>
-                        </div>
-                        <div class="project-links"> 
-                        <a href="https://sumitdeole.github.io/ppt-template/" class="btn btn-outline">View Project</a>
-                        </div>
-                    </div>                  
-                </div>
-    
-                <div class="project-card">
-                    <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect fill='%23f3f4f6' width='300' height='200'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3EPortfolio%3C/text%3E%3C/svg%3E" alt="EnglishVision" class="project-img">
-                    <div class="project-content">
-                        <h3 class="project-title">Personal Portfolio</h3>
-                        <p class="project-desc">A portfolio webpage to showcase diverse skills and projects.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">UI/UX</span>
-                            <span class="project-tag">Web Design</span>
-                            <span class="project-tag">HTML/CSS/JS</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://sumitdeole.github.io/" class="btn btn-outline">View Project</a>
+                    
+                    <div class="project-card">
+                        <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect fill='%23f3f4f6' width='300' height='200'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3EPresentationTemplate%3C/text%3E%3C/svg%3E" alt="Presentation Template" class="project-img">
+                        <div class="project-content">
+                            <h3 class="project-title">Presentation Template</h3>
+                            <p class="project-desc">HTML based template for creating professional presentations.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">UI/UX</span>
+                                <span class="project-tag">Web Design</span>
+                                <span class="project-tag">HTML/CSS/JS</span>
+                            </div>
+                            <div class="project-links"> 
+                                <a href="https://sumitdeole.github.io/ppt-template/" class="btn btn-outline">View Project</a>
+                            </div>
+                        </div>                  
+                    </div>
+        
+                    <div class="project-card">
+                        <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect fill='%23f3f4f6' width='300' height='200'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3EPortfolio%3C/text%3E%3C/svg%3E" alt="Portfolio" class="project-img">
+                        <div class="project-content">
+                            <h3 class="project-title">Personal Portfolio</h3>
+                            <p class="project-desc">A portfolio webpage to showcase diverse skills and projects.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">UI/UX</span>
+                                <span class="project-tag">Web Design</span>
+                                <span class="project-tag">HTML/CSS/JS</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://sumitdeole.github.io/" class="btn btn-outline">View Project</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1328,23 +1381,21 @@
             <p class="section-subtitle">Academic contributions in financial economics and risk management</p>
             
             <div class="research-tabs">
-                <button class="tab-btn active" data-tab="entrepreneurship">Entrepreneurship</button>
-                <button class="tab-btn" data-tab="ai-causal">AI & Causal Inference</button>
-                <button class="tab-btn" data-tab="behavioral">Economic Psychology</button>
+                <button class="research-tab-btn active" data-tab="entrepreneurship">Entrepreneurship</button>
+                <button class="research-tab-btn" data-tab="ai-causal">AI & Causal Inference</button>
+                <button class="research-tab-btn" data-tab="behavioral">Economic Psychology</button>
             </div>
             
             <!-- Entrepreneurship Research -->
-            <div class="tab-content active" id="entrepreneurship-tab">
+            <div class="research-tab-content active" id="entrepreneurship-tab">
                 <div class="research-grid">
                     <div class="research-card">
-                        <!--<span class="research-category-tag">Behavioral Economics</span> -->
                         <h3 class="research-title">Import Competition and Firm Performance</h3>
                         <p class="research-desc">We study how Chinese import competition in steel industry impacts firm welfare measures (their markups and productivity).</p>
                         <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4813591" class="btn btn-outline">Read Paper</a>
                     </div>
                     
                     <div class="research-card">
-                        <!--<span class="research-category-tag">Behavioral Economics</span> -->
                         <h3 class="research-title">European Deep Integration and Firm Performance</h3>
                         <p class="research-desc">The paper investigates how European economic integration affected firm welfare measures (firm-level markups and productivity) in member countries.</p>
                         <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4811878" class="btn btn-outline">Read Paper</a>
@@ -1353,36 +1404,32 @@
             </div>
             
             <!-- AI & Causal Inference Research -->
-            <div class="tab-content" id="ai-causal-tab">
+            <div class="research-tab-content" id="ai-causal-tab">
                 <div class="research-grid">
                     <div class="research-card">
-                        <!--<span class="research-category-tag">Behavioral Economics</span> -->
                         <h3 class="research-title">Do Emotions Predict Voting in Germany?</h3>
                         <p class="research-desc">We study the impact of negative emotions on German citizen's propensity to vote to far-right parties.</p>
-                        <a href="https://link.springer.com/article/10.1007/s00148-024-01032-9" class="btn btn-outline">Read Paper</a>
+                        <a href="https://link.springer.com/article/10.1007/s00148-024-01032-9 Add to Citavi project by DOI" class="btn btn-outline">Read Paper</a>
                     </div>
                     
                     <div class="research-card">
-                        <!--<span class="research-category-tag">Behavioral Economics</span> -->
                         <h3 class="research-title">Violence in Schools and Education Outcomes in Brazil</h3>
                         <p class="research-desc">This paper studies whether schools in violent neighborhood report particularly lower academic outcomes than their counterparts.</p>
-                        <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/rode.12342" class="btn btn-outline">Read Paper</a>
+                        <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/rode.12342 Add to Citavi project by DOI" class="btn btn-outline">Read Paper</a>
                     </div>
                 </div>
             </div>
             
             <!-- Behavioral Economics Research -->
-            <div class="tab-content" id="behavioral-tab">
+            <div class="research-tab-content" id="behavioral-tab">
                 <div class="research-grid">
                     <div class="research-card">
-                        <!--<span class="research-category-tag">Behavioral Economics</span> -->
                         <h3 class="research-title">Prospect Theory and Risk Preferences</h3>
                         <p class="research-desc">This paper examines how prospect theory helps to understand the role of risk appetite in explaining the stock market participation puzzle.</p>
                         <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5015365" class="btn btn-outline">Read Paper</a>
                     </div>
                     
                     <div class="research-card">
-                        <!--<span class="research-category-tag">Behavioral Economics</span> -->
                         <h3 class="research-title">Home Office and Employee Performance in the UK</h3>
                         <p class="research-desc">We analyse whether COVID-19-induced home office induced productivity increases among UK employees.</p>
                         <a href="#" class="btn btn-outline">Read Paper</a>
@@ -1390,6 +1437,7 @@
                 </div>
             </div>
         </div>
+    </section>
 
     <!-- Blogs Section -->
     <section class="section" id="blogs">
@@ -1398,17 +1446,16 @@
             <p class="section-subtitle">Insights on AI, LLMs, and financial analytics</p>
             
             <div class="blog-tabs">
-                <button class="tab-btn active" data-tab="genai">GenAI & LLM</button>
-                <button class="tab-btn" data-tab="ai-engineering">AI & Data Engineering</button>
+                <button class="blog-tab-btn active" data-tab="genai">GenAI & LLM</button>
+                <button class="blog-tab-btn" data-tab="ai-engineering">AI & Data Engineering</button>
             </div>
             
             <!-- GenAI & LLM Blogs -->
-            <div class="tab-content active" id="genai-tab">
+            <div class="blog-tab-content active" id="genai-tab">
                 <div class="blogs-grid">
                     <div class="blog-card">
                         <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='350' height='180' viewBox='0 0 350 180'%3E%3Crect fill='%23f3f4f6' width='350' height='180'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3EAI Bias%3C/text%3E%3C/svg%3E" alt="AI Bias" class="blog-img">
                         <div class="blog-content">
-                            <!--<span class="blog-category">AI & Data Engineering</span> -->
                             <h3 class="blog-title">Unearthing the Potential of Large Language Models (LLMs)</h3>
                             <p class="blog-desc">Using LangChain and Llama.cpp libraries, I implement an agent that answers any question on Statistics.</p>
                             <a href="https://medium.com/@sumitdeole/unearthing-the-potential-of-large-language-models-llms-32a7d70a9f0c" class="btn btn-outline">Read Here</a>
@@ -1418,7 +1465,6 @@
                     <div class="blog-card">
                         <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='350' height='180' viewBox='0 0 350 180'%3E%3Crect fill='%23f3f4f6' width='350' height='180'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3ELLMs%3C/text%3E%3C/svg%3E" alt="LLMs" class="blog-img">
                         <div class="blog-content">
-                            <!--<span class="blog-category">AI & Data Engineering</span> -->
                             <h3 class="blog-title">A Dual Promise: LLMs for Fraud Detection & Risk Reporting</h3>
                             <p class="blog-desc">Exploring how large language models can transform fraud detection and financial risk analysis.</p>
                             <a href="https://medium.com/@sumitdeole/the-dual-promise-of-llms-fraud-detection-and-economic-analysis-in-financial-services-a0ced58e690c" class="btn btn-outline">Read Here</a>
@@ -1428,7 +1474,6 @@
                     <div class="blog-card">
                         <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='350' height='180' viewBox='0 0 350 180'%3E%3Crect fill='%23f3f4f6' width='350' height='180'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3EAB Testing%3C/text%3E%3C/svg%3E" alt="A/B Testing" class="blog-img">
                         <div class="blog-content">
-                            <!--<span class="blog-category">AI & Data Engineering</span> -->
                             <h3 class="blog-title">LLM That Actually Understands Your A/B Tests (And Writes Better Reports)</h3>
                             <p class="blog-desc">How LLMs can revolutionize A/B testing analysis and reporting processes.</p>
                             <a href="https://medium.com/@sumitdeole/llm-that-actually-understands-your-a-b-tests-and-writes-better-reports-than-your-analysts-2754d67e377f" class="btn btn-outline">Read Here</a>
@@ -1438,12 +1483,11 @@
             </div>
             
             <!-- AI & Data Engineering Blogs -->
-            <div class="tab-content" id="ai-engineering-tab">
+            <div class="blog-tab-content" id="ai-engineering-tab">
                 <div class="blogs-grid">
                     <div class="blog-card">
                         <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='350' height='180' viewBox='0 0 350 180'%3E%3Crect fill='%23f3f4f6' width='350' height='180'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3EAI Bias%3C/text%3E%3C/svg%3E" alt="AI Bias" class="blog-img">
                         <div class="blog-content">
-                            <!--<span class="blog-category">AI & Data Engineering</span> -->
                             <h3 class="blog-title">We All Know AI Can Be Biased. Nobody Shows You How to Fix It.</h3>
                             <p class="blog-desc">Practical approaches to identifying and mitigating bias in AI systems.</p>
                             <a href="https://medium.com/@sumitdeole/we-all-know-ai-can-be-biased-nobody-shows-you-how-to-fix-it-c5c23f72f95c" class="btn btn-outline">Read Here</a>
@@ -1452,7 +1496,6 @@
                     <div class="blog-card">
                         <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='350' height='180' viewBox='0 0 350 180'%3E%3Crect fill='%23f3f4f6' width='350' height='180'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3EData Engineering%3C/text%3E%3C/svg%3E" alt="Data Engineering" class="blog-img">
                         <div class="blog-content">
-                            <!--<span class="blog-category">AI & Data Engineering</span> -->
                             <h3 class="blog-title">Seeing through the Data Engineering project</h3>
                             <p class="blog-desc">Best practices for creating robust data pipelines that support ML workflows in the logistics and ecommerce sectors.</p>
                             <a href="https://towardsdev.com/seeing-through-the-data-engineering-project-edf9984448a8" class="btn btn-outline">Read Here</a>
@@ -1462,17 +1505,14 @@
                     <div class="blog-card">
                         <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='350' height='180' viewBox='0 0 350 180'%3E%3Crect fill='%23f3f4f6' width='350' height='180'/%3E%3Ctext fill='%232563eb' font-family='Arial' font-size='18' x='50%25' y='50%25' text-anchor='middle'%3EAB Testing%3C/text%3E%3C/svg%3E" alt="A/B Testing" class="blog-img">
                         <div class="blog-content">
-                            <!--<span class="blog-category">AI & Data Engineering</span> -->
                             <h3 class="blog-title">LLM That Actually Understands Your A/B Tests (And Writes Better Reports)</h3>
                             <p class="blog-desc">How LLMs can revolutionize A/B testing analysis and reporting processes.</p>
                             <a href="https://medium.com/@sumitdeole/llm-that-actually-understands-your-a-b-tests-and-writes-better-reports-than-your-analysts-2754d67e377f" class="btn btn-outline">Read Here</a>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </div>
-    </section>
 
     <!-- Contact Section -->
     <section class="section" id="contact" style="background-color: #f9fafb;">
@@ -1582,8 +1622,7 @@
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#experience">Experience</a></li>
-                        <li><a href="#projects">AML</a></li>
-                        <li><a href="#WDprojects">WebDev</a></li>
+                        <li><a href="#projects">AML & WebDev</a></li>
                         <li><a href="#research">Research</a></li>
                         <li><a href="#blogs">Blogs</a></li>
                         <li><a href="#contact">Contact</a></li>
@@ -1636,26 +1675,55 @@
             const header = document.querySelector('header');
             header.classList.toggle('scrolled', window.scrollY > 100);
         });
-                // Tab functionality
+
+                // Tab functionality for projects section
         document.addEventListener('DOMContentLoaded', function() {
-            const tabBtns = document.querySelectorAll('.tab-btn');
-            const tabContents = document.querySelectorAll('.tab-content');
+            const projectTabBtns = document.querySelectorAll('.project-tab-btn');
+            const projectTabContents = document.querySelectorAll('.project-tab-content');
             
-            tabBtns.forEach(btn => {
+            projectTabBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
-                    // Remove active class from all buttons and contents
-                    tabBtns.forEach(b => b.classList.remove('active'));
-                    tabContents.forEach(c => c.classList.remove('active'));
+                    projectTabBtns.forEach(b => b.classList.remove('active'));
+                    projectTabContents.forEach(c => c.classList.remove('active'));
                     
-                    // Add active class to clicked button
                     btn.classList.add('active');
-                    
-                    // Show corresponding content
                     const tabId = btn.getAttribute('data-tab');
                     document.getElementById(`${tabId}-tab`).classList.add('active');
                 });
             });
         });
-    </script>
+
+        // Tab functionality for research section
+        document.addEventListener('DOMContentLoaded', function() {
+            const researchTabBtns = document.querySelectorAll('.research-tab-btn');
+            const researchTabContents = document.querySelectorAll('.research-tab-content');
+            
+            researchTabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    researchTabBtns.forEach(b => b.classList.remove('active'));
+                    researchTabContents.forEach(c => c.classList.remove('active'));
+                    
+                    btn.classList.add('active');
+                    const tabId = btn.getAttribute('data-tab');
+                    document.getElementById(`${tabId}-tab`).classList.add('active');
+                });
+            });
+            
+            // Tab functionality for blog section
+            const blogTabBtns = document.querySelectorAll('.blog-tab-btn');
+            const blogTabContents = document.querySelectorAll('.blog-tab-content');
+            
+            blogTabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    blogTabBtns.forEach(b => b.classList.remove('active'));
+                    blogTabContents.forEach(c => c.classList.remove('active'));
+                    
+                    btn.classList.add('active');
+                    const tabId = btn.getAttribute('data-tab');
+                    document.getElementById(`${tabId}-tab`).classList.add('active');
+                });
+            });
+        });
+</script>
 </body>
 </html>
